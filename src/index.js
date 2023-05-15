@@ -8,6 +8,7 @@ import { store } from "./app/store/store";
 //
 import { HelmetProvider } from "react-helmet-async";
 //
+import "./i18n"
 import App from "./App";
 
 const container = document.getElementById("root");

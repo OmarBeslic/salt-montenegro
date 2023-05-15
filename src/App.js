@@ -9,11 +9,12 @@ import {
   createTheme,
 } from "@mui/material";
 
-import palette from "./Theme/palette";
 import typography from "./Theme/typography";
 import breakpoints from "./Theme/breakpoints";
+import palette from "./Theme/palette";
 
 import "./App.css";
+import GlobalStyle from "./globalStyles";
 
 function App() {
   const themeOptions = useMemo(
@@ -32,7 +33,7 @@ function App() {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-
+          <GlobalStyle />
           <Router />
         </ThemeProvider>
       </StyledEngineProvider>
