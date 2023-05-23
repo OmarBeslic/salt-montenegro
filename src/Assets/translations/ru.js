@@ -15,4 +15,7 @@ export const transRU = {
     english: "Английский",
     russian: "Русский",
   },
+  page:{
+    home:"Дом"
+  }
 };

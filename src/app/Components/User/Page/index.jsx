@@ -14,11 +14,4 @@ const Page = forwardRef(({ children, title = "", meta, ...other }, ref) => (
 export default Page;
 
 // Usage
-{
-  /* <Page title={t("web.nav.contact")} meta="Kontakt: +38269670670 | Email: info@trustbizz.me">
-      <StyledContact>
-        <Info />
-        <ContactForm/>
-      </StyledContact>
-    </Page> */
-}
+

@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 .App {
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #fff;
 }

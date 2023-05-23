@@ -18,8 +18,12 @@ export default function Router() {
       children: [
         { path: "/", element: <Navigate to="/home" /> },
         { path: "/home", element: <Homepage /> },
+        // { path: '404', element: <NotFound/>}
+
       ],
     },
     // { path: "/administration", element:  },
+    // { path: '*', element: <Navigate to="/404" replace /> }
+
   ]);
 }

@@ -22,15 +22,21 @@ export const StyledLangBtn = styled.div`
       width: 100%;
       border-radius: 4px;
     }
+    svg {
+      path {
+        fill: ${props=> props.scrolled ? "var(--primary)": "var(--textMain)" };
+      }
+    }
   }
 
   ul {
     position: absolute;
     background: #fff;
     min-width: 200px;
-    padding: 15px;
+    padding: 5px;
     border-radius: 4px;
     opacity: 0;
+    right: 0;
     visibility: hidden;
     transition: 0.3s ease-in-out;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
@@ -40,14 +46,13 @@ export const StyledLangBtn = styled.div`
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 0;
-      transition: 0.3s ease-in-out;
-      color: var(--primary);
+      transition: all 0.3s ease-in-out;
+
       img {
         width: 2.5rem;
         margin-right: 10px;
         transform: scale(0.8);
-        transition: 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
 
       &:not(:last-child) {
@@ -60,6 +65,16 @@ export const StyledLangBtn = styled.div`
     ul {
       opacity: 1;
       visibility: visible;
+      li {
+        padding: 8px 15px;
+        font-size: 18px;
+        color: var(--primary);
+        &:hover {
+          background: var(--primary);
+          color: var(--textMain);
+          border-radius: 4px;
+        }
+      }
     }
   }
 `;

@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  layout: "",
+  device: "",
 };
 export const layoutSlice = createSlice({
   name: "layout",
   initialState,
   reducers: {
     layoutChange: (state, action) => {
-      const layout =
+      const device =
         action.payload <= 576
-          ? "phone"
+          ? "mobile"
           : action.payload > 576 && action.payload <= 1024
           ? "tablet"
           : "desktop";
-          state.layout = layout
+          state.device = device
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,

@@ -1,16 +1,25 @@
 import React from "react";
+
+import { useTranslation } from "react-i18next";
 import Page from "../../../Components/User/Page";
-import clip from "../../../../Assets/videos/test2.mp4";
-import { StyledHome } from "./StyledHome";
+import Header from "./Header";
+import SectionAbout from "./SectionAbout";
+import TourSection from "./TourSection";
+import EnjoySection from "./EnjoySection";
+import TeamSection from "./TeamSection";
+import BlogSection from "./BlogSection";
+
 function Homepage() {
+  const { t } = useTranslation();
+  
   return (
-    <Page title="Pocetna" meta="Pocetna stranica">
-      <StyledHome>
-        <video autoPlay loop muted className="bg-video">
-          <source src={clip} type="video/mp4" />
-        </video>
-        <div>caooo</div>
-      </StyledHome>
+    <Page title={t("page.home")} meta="Pocetna stranica">
+      <Header />
+      <SectionAbout />
+      <TourSection />
+      <TeamSection />
+      <EnjoySection />
+      <BlogSection />
     </Page>
   );
 }

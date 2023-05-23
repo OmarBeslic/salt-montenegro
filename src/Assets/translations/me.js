@@ -15,4 +15,7 @@ export const transME = {
     english: "Engleski",
     russian: "Ruski",
   },
+  page:{
+    home:"Početna"
+  }
 };

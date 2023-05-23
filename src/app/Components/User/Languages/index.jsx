@@ -6,6 +6,8 @@ import RU from "../../../../Assets/images/ru.png";
 import MNE from "../../../../Assets/images/mne.png";
 //
 import { StyledLangBtn } from "./StyledLangBtn";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
 
 const LANGS = [
   {
@@ -25,7 +27,7 @@ const LANGS = [
   },
 ];
 
-export default function LangBtn() {
+export default function LangBtn({scrolled}) {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const activeLang =
@@ -41,9 +43,12 @@ export default function LangBtn() {
     <StyledLangBtn
       className={`language-btn ${open ? "active" : ""}`}
       onClick={() => setOpen(!open)}
+      scrolled={scrolled}
     >
       <span>
         <img src={activeLang?.icon} alt={LANGS[0].label} />
+        <ArrowDropDownIcon />
+
       </span>
       <ul>
         {LANGS?.map((lang, idx) => {
