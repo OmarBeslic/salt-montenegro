@@ -9,7 +9,7 @@ export const StyledDropdown = styled.div`
   span {
     position: relative;
     padding: 0 25px;
-    border-radius: 4px;
+    border-radius: 10px;
     display: flex;
     font-size: 18px;
     justify-content: center;
@@ -29,7 +29,7 @@ export const StyledDropdown = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 140px;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 5px;
     opacity: 0;
     visibility: hidden;
@@ -45,7 +45,7 @@ export const StyledDropdown = styled.div`
       .langs {
         color: var(--primary);
         padding: 8px 15px;
-        border-radius: 4px;
+        border-radius: 10px;
         font-size: 18px;
         &:hover {
           color: #fff;

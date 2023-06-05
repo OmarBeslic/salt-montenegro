@@ -4,7 +4,7 @@ export const transRU = {
     about: "О нас",
     contact: "Контакт",
     blog: "Блог",
-    reviews: "Отзывы",
+    testimonials: "Отзывы",
     services:"Наши услуги",
     tours: "Tуры",
     booking: "Бронирование",

@@ -14,7 +14,7 @@ function DesktopNav({ scrolled }) {
     { route: "/home", item: t("nav.home") },
     { route: "/about-us", item: t("nav.about") },
     { route: "/blog", item: t("nav.blog") },
-    { route: "/reviews", item: t("nav.reviews") },
+    { route: "/testimonials", item: t("nav.testimonials") },
     {
       item: t("nav.services"),
       children: [

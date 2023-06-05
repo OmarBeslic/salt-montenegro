@@ -11,7 +11,9 @@ const StyledSecondaryBtn = styled.button`
   cursor: pointer;
   margin: 20px auto;
   background: #b1dae7;
-  border-radius: 4px;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+  border: 1px solid transparent;
 
   span {
     font-size: 18px;
@@ -34,6 +36,9 @@ const StyledSecondaryBtn = styled.button`
 
   &:active {
     transform: scale(0.95);
+  }
+  &:hover{
+    border: 1px solid #234567;
   }
 `;
 

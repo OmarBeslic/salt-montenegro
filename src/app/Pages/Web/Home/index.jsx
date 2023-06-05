@@ -8,17 +8,19 @@ import TourSection from "./TourSection";
 import EnjoySection from "./EnjoySection";
 import TeamSection from "./TeamSection";
 import BlogSection from "./BlogSection";
+import Gallery from "./Gallery";
+import Reviews from "./Reviews";
 
 function Homepage() {
   const { t } = useTranslation();
-  
+
   return (
     <Page title={t("page.home")} meta="Pocetna stranica">
       <Header />
       <SectionAbout />
       <TourSection />
       <TeamSection />
-      <EnjoySection />
+      <Reviews />
       <BlogSection />
     </Page>
   );

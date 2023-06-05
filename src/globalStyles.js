@@ -26,14 +26,14 @@ const GlobalStyle = createGlobalStyle`
     h1{
         font-size: 66px;
     }
-    h2{
+    /* h2{
         font-size: 46px;
-    }
+    } */
     h3{
         font-size: 24px;
     }
     span{
-        font-size: 14px;
+        font-size: 15px;
     }
     p{
         font-size: 16px;

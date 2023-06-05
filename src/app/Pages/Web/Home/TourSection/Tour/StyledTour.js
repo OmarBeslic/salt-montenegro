@@ -1,37 +1,69 @@
 import styled from "styled-components";
 
 export const StyledTour = styled.div`
-  width: 450px;
-  min-height: 470px;
+  width: 350px;
+  height: 370px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 1px solid rgba(0,0,0,0.2 );
+  justify-content: space-between;
+  padding: 25px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   background: #fff;
   z-index: 1;
-  &:hover {
-    transform: scale(1.0125);
-    box-shadow: rgb(190, 190, 190) 0px 1px 9px 5px;
+  background-image: ${({ bgImg }) => `url(${bgImg})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & > * {
+    color: var(--textMain);
   }
 
- 
-  img {
-    height: 150px;
-    margin: 10px 0;
+  h3 {
+    font-size: 50px;
   }
-  .tour-description {
-    margin-top: 20px;
+  button {
+    margin: 0 0 0 auto;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
-  .price-duration {
+
+  box-shadow: rgba(1, 32, 54, 0.8) 0px 0px 0px 2000px inset;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.3s ease-in-out;
+  .show {
+    transition: all 0.3s ease-in-out;
+    bottom: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    span{
+    flex-direction: column;
+    text-align: left;
+    .tour-description {
+      margin-top: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+      
+    }h2{
+        width:100%;
+      }
+    .price-duration {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+      span {
         font-weight: 700;
+      }
     }
   }
 `;

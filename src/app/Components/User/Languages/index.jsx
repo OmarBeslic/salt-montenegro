@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 //
-import EN from "../../../../Assets/images/eng.png";
-import RU from "../../../../Assets/images/ru.png";
-import MNE from "../../../../Assets/images/mne.png";
-//
 import { StyledLangBtn } from "./StyledLangBtn";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
@@ -13,17 +9,17 @@ const LANGS = [
   {
     value: "me",
     label: "lang.montenegrian",
-    icon: MNE,
+    icon: 'https://flagcdn.com/me.svg',
   },
   {
     value: "en",
     label: "lang.english",
-    icon: EN,
+    icon: 'https://flagcdn.com/gb.svg',
   },
   {
     value: "ru",
     label: "lang.russian",
-    icon: RU,
+    icon: 'https://flagcdn.com/ru.svg',
   },
 ];
 

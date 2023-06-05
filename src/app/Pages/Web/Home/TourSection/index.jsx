@@ -10,7 +10,8 @@ function TourSection() {
 
   return (
     <StyledTourSection>
-      <div className="tours-header">
+      <div className="overlay-tour">
+        <div className="tours-header">
         <span>Our Exlusives</span>
         <h2>Some of our best tours</h2>
         <p className="about-tours">
@@ -20,7 +21,10 @@ function TourSection() {
           excepturi debitis. Eum.
         </p>
       </div>
+      </div>
+      
       <div className="tours">
+        <Tour />
         <Tour />
         <Tour />
         <Tour />

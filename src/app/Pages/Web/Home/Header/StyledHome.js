@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.div`
   position: relative;
+  width: auto;
+  overflow: hidden;
   .overlay {
     position: absolute;
     top: 0;
@@ -15,27 +17,10 @@ export const StyledHeader = styled.div`
     .home-content {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       height: 84%;
       width: 100%;
-      .description {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        width: 50%;
-        height: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px 0 var(--primary);
-        backdrop-filter: blur(8.5px);
-        -webkit-backdrop-filter: blur(8.5px);
-        border-radius: 4px;
-        h1 {
-          color: var(--textMain);
-          margin-bottom: 55px;
-          
-        }
-      }
+      justify-content: start;
     }
   }
   .bg-video {
@@ -45,5 +30,27 @@ export const StyledHeader = styled.div`
     height: 95vh;
     object-fit: cover;
     z-index: -100;
+  }
+  @media (max-width: 1024px) {
+    .home-content {
+      display: flex;
+      align-items: center;
+      justify-content: center !important;
+      height: 84%;
+      width: 100%;
+      justify-content: start;
+    }
+    .bg-video {
+    
+    height: 60vh;
+    
+  }
+}
+@media (max-width: 576px) {
+    .bg-video{
+      height: 100vh;
+    }
+    .overlay {
+    }
   }
 `;

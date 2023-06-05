@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 const StyledPrimaryBtn = styled.button`
   padding: 10px 24px;
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: transparent;
   color: var(--textMain);
@@ -11,6 +11,10 @@ const StyledPrimaryBtn = styled.button`
   cursor: pointer;
   font-size: ${(props) => props.font};
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
 
   ${({ hover, icon }) =>
     hover && icon
@@ -45,10 +49,9 @@ const StyledPrimaryBtn = styled.button`
       : css``};
 `;
 
-function PrimaryButton({ children, font, hover, icon }, ...otherProps) {
+function PrimaryButton({ children, font, hover, icon, ...otherProps}, ) {
   return (
     <StyledPrimaryBtn
-      className="primary-btn"
       font={font}
       hover={hover}
       icon={icon}

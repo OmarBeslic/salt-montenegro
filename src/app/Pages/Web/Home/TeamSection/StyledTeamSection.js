@@ -1,20 +1,16 @@
 import styled from "styled-components";
 import sunset from "../.././../../../Assets/images/sunset.webp";
 export const StyledTeamSection = styled.div`
-  width: 100%;
+  width: 85%;
   display: flex;
-  align-items: start;
-  justify-content: start;
-  height: 650px;
-  padding: 15px 0;
-  background-image: url(${sunset});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 330px;
+  margin:0 0 50px;
+
   .meet-team {
-    width: 550px;
-    height: 550px;
-    box-shadow: inset 0 0 0 2000px rgba(49, 112, 142, 0.7);
+   
 
     display: flex;
     align-items: end;
@@ -22,11 +18,11 @@ export const StyledTeamSection = styled.div`
     flex-direction: column;
     border-radius: 0 4px 4px 0;
     h1 {
-      color: var(--textMain);
+      color: var(--primary);
       text-align: center;
     }
     span {
-      color: var(--textMain);
+      color: var(--primary);
       font-family: "Great Vibes", "cursive";
       font-weight: 400;
       font-size: 30px;
@@ -45,10 +41,21 @@ export const StyledTeamSection = styled.div`
     }
   }
   .boat-crew {
-    width: calc(100vw - 550px);
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: end;
-    justify-content: space-evenly;
+    justify-content: space-around;
+  }
+  @media (max-width: 1024px) {
+    height: unset;
+    .meet-team{
+      margin-bottom: 20px;
+    }
+   .boat-crew{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
   }
 `;

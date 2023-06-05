@@ -10,7 +10,7 @@ function UserLayout() {
     <>
       <Navigation />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSectionAbout = styled.div`
-  height: 800px;
+  height: 440px;
   width: 100vw;
   position: relative;
   background: var(--backgroundMain);
@@ -10,130 +10,140 @@ export const StyledSectionAbout = styled.div`
   justify-content: start;
   flex-direction: column;
   margin: 50px 0;
+  
   .about-content {
-    width: 90%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    .anchor{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
     .left-content {
-      flex-direction: column;
-      width: 60%;
       height: 100%;
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: space-between;
       .photos-div {
-        /* border: 1px solid red; */
         width: 100%;
-        height: 48%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
 
         .photo-left {
-          width: 50%;
+          /* width: 50%; */
           height: 100%;
           display: flex;
-          align-items: center;
+          align-items: end;
           flex-direction: column;
           justify-content: center;
-          .photo-up {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            align-items: start;
-            justify-content: space-around;
-            margin: 0 auto;
-            overflow: hidden;
-            img {
-              height: 80%;
-              transition: 0.5s all ease-in-out;
-            }
-            .fish {
-              &:hover {
-                transform: scale(1.2);
-              }
-            }
-          }
-          .photo-down {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            overflow: hidden;
-            img {
-              height: 100%;
-              transition: 0.5s all ease-in-out;
-              &:hover {
-                transform: scale(1.2);
-              }
-            }
+          margin: 0 20px 0 0;
+          img{
+            width: 200px;
+            padding: 5px 0;
           }
         }
         .photo-right {
-          width: 50%;
+          margin: 0 20px 0 0;
+          /* width: 50%; */
           height: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto;
           overflow: hidden;
 
           img {
-            height: 100%;
+            height: 425px;
             transition: 0.5s all ease-in-out;
-            &:hover {
-              transform: scale(1.2);
-            }
           }
         }
       }
       .about-desc-div {
         width: 100%;
-        height: 50%;
-        padding: 20px 40px;
+        padding: 0 40px;
         display: flex;
-      align-items: start;
-      flex-direction: column;
-        &>*{
+        align-items: start;
+        flex-direction: column;
+        & > * {
           color: var(--primary);
         }
-        span{
+        span {
           margin: 20px 0 0;
-          text-align: left;
+          text-align: center;
           width: 100%;
-          font-family: Great Vibes, 'cursive';
+          font-family: Great Vibes, "cursive";
           font-weight: 400;
           font-size: 30px;
         }
-        h1{
+        h1 {
           margin: 20px 0;
           line-height: normal;
-          text-align: left;
+          text-align: center;
           width: 100%;
-          
         }
-        p{
-          width: 80%;
-          text-align: left;
+        p {
+          /* width: 80%; */
+          text-align: center;
         }
       }
     }
-    
   }
-  .rudder {
-    position: absolute;
-    bottom: -210px;
-    right: 20px;
-    animation: rotate 30s linear infinite !important;
-    z-index: 2;
+  @media (max-width: 1024px) {
+    height: 100%;
+    margin: 0 0 50px;
+    .about-content {
+      width: 100%;
+      justify-content: center;
+      .left-content {
+        width: 90% !important;
+        flex-direction: column-reverse;
+        .photos-div {
+          margin-top: 20px;
+          .photo-left,
+          .photo-right {
+            width: 100% !important;
+            img {
+              padding: 10px;
+              /* height: 150px !important; */
+            }
+          }
+        }
+        .about-desc-div {
+          padding: unset;
+          align-items: center;
+          h1 {
+            font-size: 40px;
+          }
+          p {
+            width: unset;
+          }
+          & > * {
+            text-align: center !important;
+          }
+        }
+      }
+    }
+    .rudder {
+      width: 200px;
+      bottom: -195px;
+      
+      z-index: 1;
+    }
   }
-  @keyframes rotate {
-    to {
-      transform: rotate(360deg);
+  @media (max-width: 576px) {
+    .photos-div{
+      flex-direction: column;
+      justify-content: center !important;
+      img{
+        width: 100% !important;
+      }
+      .photo-left,.photo-right{
+        margin: 0 !important;
+      }
     }
   }
 `;

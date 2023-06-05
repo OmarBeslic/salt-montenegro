@@ -5,6 +5,7 @@ import Dropdown from "./Dropdown";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import LangBtn from "../Languages";
 
 function MobileNav({ scrolled }) {
   const { t } = useTranslation();
@@ -15,7 +16,7 @@ function MobileNav({ scrolled }) {
     { route: "/about-us", item: t("nav.about") },
     { route: "/contact", item: t("nav.contact") },
     { route: "/blog", item: t("nav.blog") },
-    { route: "/reviews", item: t("nav.reviews") },
+    { route: "/testimonials", item: t("nav.testimonials") },
     {
       item: t("nav.services"),
       children: [
@@ -30,16 +31,20 @@ function MobileNav({ scrolled }) {
       <div className="main-nav">
         <div className="nav">
           <img src={logo} alt="" className="logo-mobile" />
-          <div
-            class={`container ${navOpened ? "change" : ""}`}
-            onClick={() => setNavOpened(!navOpened)}
-          >
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+          <div className="lang-nav">
+            <LangBtn scrolled={scrolled} />
+            <div
+              class={`container ${navOpened ? "change" : ""}`}
+              onClick={() => setNavOpened(!navOpened)}
+            >
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
           </div>
         </div>
       </div>
+      <div className="div"></div>
       <div className={`nav-opened ${navOpened ? "active" : ""}`}>
         {links?.map((el) => {
           if (el?.children)
@@ -52,7 +57,9 @@ function MobileNav({ scrolled }) {
             );
           return (
             <Typography sx={{ p: 2 }}>
-              <Link to={el?.route}>{el?.item}</Link>
+              <Link to={el?.route} onClick={() => setNavOpened(false)}>
+                {el?.item}
+              </Link>
             </Typography>
           );
         })}

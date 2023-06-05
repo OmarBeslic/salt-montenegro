@@ -1,39 +1,65 @@
 import styled from "styled-components";
 
 export const StyledHomeForm = styled.div`
-  height: 100%;
-  width: 40%;
+  width: 30%;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
+  margin-left: 200px;
   .home-form {
-    width: 80%;
-    height: 80%;
     box-shadow: 0 8px 32px 0 var(--primary);
 
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to left, var(--primary), var(--primaryThree));
-    .logo {
-      width: 60px;
-    }
+    background: rgba(255, 255, 255, 0.35);
+
     h3 {
       color: var(--textMain);
-      margin: 20px 0;
+      margin: 20px 0 0;
     }
     form {
-      height: 400px;
-      width: 300px;
+      width: 100%;
       border-radius: 16px;
-      backdrop-filter: blur(8.6px);
-      -webkit-backdrop-filter: blur(8.6px);
       display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 20px;
+      select,
+      input {
+        margin: 10px 0;
+        border: unset;
+        width: 70%;
+        height: 48px;
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus-visible,
+        &:visited {
+          border: unset;
+          outline: unset;
+        }
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-left: 0;
+    width: 50%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    .home-form {
+      width: 95%;
+      padding: 10px;
+      margin: 20px 0;
     }
   }
 `;
+// @media (max-width: 1024px) {
+// }

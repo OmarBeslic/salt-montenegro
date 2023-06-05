@@ -125,7 +125,13 @@ export const StyledMobileNav = styled.div`
       img {
         height: 90%;
       }
+      .lang-nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .container {
+        margin-left: 10px;
         .bar1,
         .bar2,
         .bar3 {

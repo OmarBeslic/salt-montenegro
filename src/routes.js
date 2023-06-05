@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import UserLayout from "./hoc/web/UserLayout";
 import LoadingScreen from "./app/Components/Shared/LoadingScreen";
+import AboutUs from "./app/Pages/Web/About";
 
 //User pages
 const Homepage = lazy(() => import("./app/Pages/Web/Home"));
@@ -18,6 +19,7 @@ export default function Router() {
       children: [
         { path: "/", element: <Navigate to="/home" /> },
         { path: "/home", element: <Homepage /> },
+        { path: "/about-us", element: <AboutUs /> },
         // { path: '404', element: <NotFound/>}
 
       ],

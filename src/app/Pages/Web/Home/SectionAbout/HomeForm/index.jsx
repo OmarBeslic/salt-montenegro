@@ -1,8 +1,5 @@
 import React from "react";
 import { StyledHomeForm } from "./StyledHomeForm";
-import logo from "../../../../../../Assets/images/logo2.png";
-import SelectField from "../../../../../../FormFields/Select";
-import DatePicker from "../../../../../../FormFields/Datepicker";
 import PrimaryButton from "../../../../../Components/Shared/Buttons/primaryButton";
 
 function HomeForm() {
@@ -10,12 +7,17 @@ function HomeForm() {
   return (
     <StyledHomeForm>
       <div className="home-form">
-        <img src={logo} alt="Logo" className="logo" />
-        <h3>Find your tour today</h3>
+        <h3>Explore the sea</h3>
         <form action="">
-          <SelectField />
-          <DatePicker />
-          <SelectField />
+          <select name="Select tour" id="">
+            <option value="">Number of people</option>
+          </select>
+          <select name="" id="">
+            <option value="">Choose Tour</option>
+            <option value="">Choose Tour</option>
+            <option value="">Choose Tour</option>
+          </select>
+          <input type="date" placeholder="Choose date"/>
           <PrimaryButton>Search tour</PrimaryButton>
         </form>
       </div>

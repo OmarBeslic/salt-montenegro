@@ -1,43 +1,126 @@
 import React from "react";
 import crew from "../../../../../../Assets/images/crew.webp";
 import styled from "styled-components";
-
+import SecondaryButton from "../../../../../Components/Shared/Buttons/secondarybutton";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link } from "react-router-dom";
 const StyledSailor = styled.div`
-  width: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  width: 650px;
   padding: 10px 15px;
-  /* background: rgba(255, 255, 255, 0.1); */
-  box-shadow: inset 0 0 0 2000px rgba(49,112, 142,0.7);
-  /* box-shadow: 0 0 3px 0px rgba(49,112, 142,0.7);
-  backdrop-filter: blur(11.5px);
-  -webkit-backdrop-filter: blur(11.5px); */
-  border-radius: 4px;
-  color: var(--textMain);
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border-radius: 10px;
+  color: var(--primary);
+  .about-sailor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 0 0 15px;
+    .name-more {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .socials {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      /* width: 30%; */
+      a {
+        text-decoration: none;
+        color: var(--primary);
+        background: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease-in-out;
+        margin: 0 5px 0 0;
+      }
+    }
+    button {
+      margin: 0;
+    }
+  }
   h1 {
     line-height: normal;
     margin: 10px 0;
     font-size: 55px;
-    color: var(--textMain);
+    color: var(--primary);
   }
-  img {
-    width: 100%;
-    margin: 10px 0;
+  .img-backg {
+    height: 100%;
+    width: 160px;
+    background-color: var(--primary);
+    display: flex;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 180px;
+      margin: 10px 0;
+    }
+  }
+  @media (max-width: 1024px) {
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 576px) {
+    flex-direction: column-reverse;
+    width: 95%;
+    .img-backg {
+      img {
+        width: 230px;
+      }
+    }
+    .about-sailor{
+      .socials{
+        justify-content: center;
+      }
+    }
   }
 `;
 
 function Sailor() {
   return (
     <StyledSailor>
-      <h1>John Doe</h1>
-      <p>
-        We have a very high candidate success rate as well as a reputation for
-        producing well trained Dive Instructors. The program is a mixture of...
-      </p>
-      <div className="socials"></div>
-      <img src={crew} alt="" />
+      <div className="img-backg">
+        <img src={crew} alt="" />
+      </div>
+      <div className="about-sailor">
+        <div className="name-more">
+          <h2>John Doe</h2> <SecondaryButton font="18px" hover={true} />
+        </div>
+        <p>
+          We have a very high candidate success rate as well as a reputation for
+          producing well trained Dive Instructors. The program is a mixture
+          of...
+        </p>
+        <div className="socials">
+          <Link to="https://wa.me/69627028" target="_blank">
+            <FacebookIcon />
+          </Link>
+          <Link to="https://wa.me/69627028" target="_blank">
+            <InstagramIcon />
+          </Link>
+          <Link to="https://wa.me/69627028" target="_blank">
+            <WhatsAppIcon />
+          </Link>
+        </div>
+      </div>
     </StyledSailor>
   );
 }

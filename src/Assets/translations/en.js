@@ -4,7 +4,7 @@ export const transEN = {
     about: "About Us",
     contact: "Contact",
     blog: "Blog",
-    reviews: "Reviews",
+    testimonials: "Testimonials",
     services: "Our services",
     tours: "Tours",
     booking: "Booking",

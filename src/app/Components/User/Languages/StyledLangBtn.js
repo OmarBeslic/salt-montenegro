@@ -20,7 +20,7 @@ export const StyledLangBtn = styled.div`
     transition: 0.3s ease-in-out;
     img {
       width: 100%;
-      border-radius: 4px;
+      border-radius: 10px;
     }
     svg {
       path {
@@ -34,7 +34,7 @@ export const StyledLangBtn = styled.div`
     background: #fff;
     min-width: 200px;
     padding: 5px;
-    border-radius: 4px;
+    border-radius: 10px;
     opacity: 0;
     right: 0;
     visibility: hidden;
@@ -72,7 +72,7 @@ export const StyledLangBtn = styled.div`
         &:hover {
           background: var(--primary);
           color: var(--textMain);
-          border-radius: 4px;
+          border-radius: 10px;
         }
       }
     }
