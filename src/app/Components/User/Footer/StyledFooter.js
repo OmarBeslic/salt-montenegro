@@ -12,9 +12,8 @@ export const StyledFooter = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   .footer-up {
-    margin: 15px 0 0 0;
+    padding: 10px 0 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    height: 85%;
     width: 81%;
     display: flex;
     align-items: center;
@@ -65,6 +64,11 @@ export const StyledFooter = styled.div`
           h3 {
             text-align: center;
             width: 100%;
+            padding: 0 10px 15px;
+            color: var(--textMain);
+            font-family: "Great Vibes", "cursive";
+            font-weight: 400;
+            font-size: 30px;
           }
           .footer-links {
             height: 150px;
@@ -93,6 +97,7 @@ export const StyledFooter = styled.div`
       }
       p {
         text-align: left;
+        margin: 10px 0 0;
       }
       & > * {
         color: rgba(255, 255, 255, 0.5);

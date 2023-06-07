@@ -6,14 +6,14 @@ export const StyledReview = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background3);
+  /* background: var(--background3); */
   .mask {
     width: 70%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     & > * {
-      color: var(--textmain);
+      color: var(--textMain);
     }
 
     .name-review {
@@ -23,17 +23,17 @@ export const StyledReview = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: start;
-        .country{
+        .country {
           display: flex;
           align-items: center;
           justify-content: center;
           margin: 0px 0 15px;
-          img{
+          img {
             width: 50px;
             margin-right: 10px;
           }
-          span{
-            color: var(--primary);
+          span {
+            color: var(--textMain);
           }
         }
       }
@@ -44,7 +44,7 @@ export const StyledReview = styled.div`
     .img-backg {
       height: 100%;
       width: 160px;
-      background-color: var(--primary);
+      background-color: var(--textMain);
       display: flex;
       margin: 0 10px;
       align-items: center;
@@ -57,16 +57,16 @@ export const StyledReview = styled.div`
   }
   @media (max-width: 576px) {
     height: 470px !important;
-   .mask{
-    flex-direction: column;
-    .name-review{
-      .person{
-        align-items:center;
-      }
-      .review{
-        text-align: center;
+    .mask {
+      flex-direction: column;
+      .name-review {
+        .person {
+          align-items: center;
+        }
+        .review {
+          text-align: center;
+        }
       }
     }
-   }
   }
 `;

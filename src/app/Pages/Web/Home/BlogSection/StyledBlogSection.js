@@ -1,14 +1,9 @@
 import styled from "styled-components";
-import rods from "../../../../../Assets/images/rods.webp";
 export const StyledBlogSection = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* background-image: url(${rods}); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   margin: 0 0 50px;
   .container {

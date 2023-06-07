@@ -15,11 +15,14 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import Review from "./Review";
+import { useSelector } from "react-redux";
 
 function Reviews() {
-  // SwiperCore.use([Pagination, Navigation, Autoplay]);
+  SwiperCore.use([Pagination, Autoplay]);
+  const notDesktop = useSelector((state) => state.layout?.device) !== "desktop";
+
   return (
-    <StyledReviews>
+    <StyledReviews notDesktop={notDesktop}>
       <div className="overlay-div">
         <div className="half-div">
         <span className="cursive-span">Testimonials</span>
@@ -28,11 +31,10 @@ function Reviews() {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={2}
           slidesPerView={1}
-          // navigation
-          // autoplay={{
-          //   delay: 2500,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           loop={true}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}

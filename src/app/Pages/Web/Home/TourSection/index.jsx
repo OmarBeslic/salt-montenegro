@@ -3,15 +3,17 @@ import { StyledTourSection } from "./StyledTourSection";
 import Tour from "./Tour";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 import { useNavigate } from "react-router-dom";
-import boat from "../../../../../Assets/images/boat2.webp"
+import boat from "../../../../../Assets/images/boat2.webp";
+import { useSelector } from "react-redux";
 function TourSection() {
-    // fetch tura pa ih slicovati i mapirati da prikazuje samo tri
-    const navigate = useNavigate()
+  // fetch tura pa ih slicovati i mapirati da prikazuje samo tri
+  const notDesktop = useSelector((state) => state.layout?.device) !== "desktop";
+  const navigate = useNavigate();
 
   return (
-    <StyledTourSection>
-      <div className="overlay-tour">
-        <div className="tours-header">
+    <StyledTourSection notDesktop={notDesktop}>
+      <div className="overlay-tour"></div>
+      <div className="tours-header">
         <span>Our Exlusives</span>
         <h2>Some of our best tours</h2>
         <p className="about-tours">
@@ -21,15 +23,18 @@ function TourSection() {
           excepturi debitis. Eum.
         </p>
       </div>
-      </div>
-      
+
       <div className="tours">
         <Tour />
         <Tour />
         <Tour />
         <Tour />
       </div>
-      <SecondaryButton onClick={()=> navigate("/tours")} className="tours-btn">View all Tours</SecondaryButton>
+      <div className="btn-div">
+      <SecondaryButton onClick={() => navigate("/tours")} className="tours-btn">
+        View all Tours
+      </SecondaryButton>
+      </div>
       <img src={boat} alt="Boat" className="boat-sm" />
     </StyledTourSection>
   );

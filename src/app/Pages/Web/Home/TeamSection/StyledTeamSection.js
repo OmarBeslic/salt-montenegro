@@ -7,7 +7,7 @@ export const StyledTeamSection = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 330px;
-  margin:0 0 50px;
+  margin:100px 0;
 
   .meet-team {
    

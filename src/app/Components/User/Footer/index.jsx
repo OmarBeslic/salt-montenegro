@@ -25,7 +25,6 @@ function Footer() {
         <div className="footers">
           <div className="footer-el">
             <img src={logo} alt="" className="logo" />
-            <h3>About</h3>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Explicabo itaque, ipsa suscipit fuga facere, facilis assumenda

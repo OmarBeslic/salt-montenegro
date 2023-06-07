@@ -8,7 +8,6 @@ export const StyledTour = styled.div`
   justify-content: space-between;
   padding: 25px 20px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   background: #fff;
   z-index: 1;

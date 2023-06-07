@@ -4,54 +4,69 @@ export const StyledTourSection = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   position: relative;
-
+  z-index: 2;
+  box-shadow: 0px 10px 5px #fff, 0px -10px 5px #fff;
+  min-height: 85vh;
   .overlay-tour {
     background-image: url(${clocks});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: rgba(1, 32, 54, 0.5) 0px 0px 0px 2000px inset;
-
+    background-attachment: ${(props) =>
+      props?.notDesktop ? "unset" : "fixed"};
+    position: absolute;
     width: 100%;
-    height: 300px;
-    .tours-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height: 300px;
-
-      background: linear-gradient(0deg, white 0%, transparent 30%, white 100%);
-      width: 100%;
-      margin-bottom: 45px;
-      h2 {
-        margin: 0 0 20px 0;
-        color: var(--textMain);
-      }
-      span {
-        color: var(--textMain);
-        font-family: Great Vibes, "cursive";
-        font-weight: 400;
-        font-size: 30px;
-      }
-      .about-tours {
-        color: var(--textMain);
-        width: 50%;
-        text-align: center;
-      }
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  }
+  .tours-header {
+    background: linear-gradient(0deg, transparent 0%, white 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* height: 100%; */
+    z-index: 2;
+    width: 100%;
+    padding: 100px 0 50px;
+    h2 {
+      margin: 0 0 20px 0;
+      color: var(--textMain);
+    }
+    span {
+      color: var(--textMain);
+      font-family: Great Vibes, "cursive";
+      font-weight: 400;
+      font-size: 30px;
+    }
+    .about-tours {
+      color: var(--textMain);
+      width: 50%;
+      text-align: center;
     }
   }
-
   .tours {
     display: grid;
     grid-template-columns: repeat(4, 350px);
     gap: 60px;
   }
-  .tours-btn {
-    margin: 45px 0;
+  .btn-div {
+    padding: 30px 0 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, white 0%, transparent 100%);
+    z-index: 2;
+
+    text-align: center;
+    .tours-btn {
+    }
   }
   .boat-sm {
     position: absolute;
@@ -65,7 +80,7 @@ export const StyledTourSection = styled.div`
     }
   }
   @media (max-width: 576px) {
-    .overlay-tour{
+    .overlay-tour {
       .about-tours {
         width: 90% !important;
       }

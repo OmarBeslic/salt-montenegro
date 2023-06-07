@@ -11,8 +11,8 @@ const initialState = {
 export const getCountryList = createAsyncThunk("all/countries", async (id) => {
   const res = await layoutService.getCountries();
   const countryData = res.data.map(country => ({
-    code: country.cca2,
-    name: country.name.common,
+    value: country.cca2,
+    label: country.name.common,
     flag: country.flags.svg
   }));
   return countryData;

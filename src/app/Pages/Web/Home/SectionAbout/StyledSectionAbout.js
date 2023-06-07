@@ -9,7 +9,7 @@ export const StyledSectionAbout = styled.div`
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  margin: 50px 0;
+  margin: 100px 0;
   
   .about-content {
     width: 80%;
@@ -94,7 +94,7 @@ export const StyledSectionAbout = styled.div`
   }
   @media (max-width: 1024px) {
     height: 100%;
-    margin: 0 0 50px;
+    margin: 50px 0 80px;
     .about-content {
       width: 100%;
       justify-content: center;

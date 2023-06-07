@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledDesktopNav = styled.div`
   position: fixed;
-  height: ${(props) => (props.scrolled ? "112px" : "140px")};
+  height: ${(props) => (props.scrolled ? "90px" : "100px")};
   top: 0;
   z-index: 99;
   border-radius: 0 0 4px 4px;
@@ -125,7 +125,7 @@ export const StyledMobileNav = styled.div`
       img {
         height: 90%;
       }
-      .lang-nav{
+      .lang-nav {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -163,6 +163,7 @@ export const StyledMobileNav = styled.div`
     align-items: center;
     flex-direction: column;
     background: var(--textMain);
+    height: 0;
 
     a {
       text-decoration: none;
@@ -170,10 +171,10 @@ export const StyledMobileNav = styled.div`
       color: var(--primary);
     }
     &.active {
+      height: 100%;
       z-index: 98;
       transition: all 0.5s cubic-bezier(0, 1, 0, 1);
       transform: translateY(0);
-      /* transform: translateY(300px); */
     }
   }
 `;
