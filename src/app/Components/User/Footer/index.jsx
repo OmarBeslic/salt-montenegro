@@ -47,7 +47,7 @@ function Footer() {
             <h3>Explore</h3>
             <div className="footer-links">
               {links.map((el) => {
-                return <Link to={el?.route}>{el?.item}</Link>;
+                return <Link key={el?.item} to={el?.route}>{el?.item}</Link>;
               })}
             </div>
           </div>

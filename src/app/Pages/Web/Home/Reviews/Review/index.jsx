@@ -1,27 +1,26 @@
 import React from "react";
 import { StyledReview } from "./StyledReview";
-import crew from "../../../../../../Assets/images/crew.webp";
-
-function Review() {
+import user from "../../../../../../Assets/images/user.webp";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+function Review({ review }) {
   return (
     <StyledReview>
       <div className="mask">
         <div className="img-backg">
-          <img src={crew} alt="" />
+          <img src={review?.userPhoto ? review?.userPhoto : user} alt="" />
         </div>
         <div className="name-review">
           <div className="person">
-            <h3 className="name">Omar Beslic</h3>
+            <h3 className="name">{`${review?.name} ${review?.lastName}`}</h3>
             <div className="country">
-              <img src="https://flagcdn.com/me.svg" alt="Montenegro" />
-              <span>Montenegro</span>
+              <img src={review?.countryFlag} alt="Montenegro" />
+              <span>{review?.country}</span>
             </div>
           </div>
           <p className="review">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-            aspernatur, dolorum dolore assumenda vero sint nisi laborum quis
-            tenetur aspernatur
-            
+            <FormatQuoteIcon className="upper-quote" />
+            {review?.review}
+            <FormatQuoteIcon className="down-quote" />
           </p>
         </div>
       </div>

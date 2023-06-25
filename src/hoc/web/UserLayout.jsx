@@ -7,11 +7,11 @@ import { useEffect } from "react";
 import { getAllTranslations } from "../../app/store/slices/translationsSlice";
 
 function UserLayout() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(getAllTranslations())
-  },[])
+  useEffect(() => {
+    dispatch(getAllTranslations());
+  }, []);
 
   return (
     <>

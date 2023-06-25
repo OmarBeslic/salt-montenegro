@@ -48,7 +48,7 @@ function Navigation() {
     dispatch(layoutChange(screenSize?.width));
   }, []);
 
-  console.log(screenSize.width,isDesktop, "device");
+  // console.log(screenSize.width,isDesktop, "device");
   return (
     <>
       {isDesktop ? (

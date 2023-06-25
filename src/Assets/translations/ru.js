@@ -16,6 +16,8 @@ export const transRU = {
     russian: "Русский",
   },
   page:{
-    home:"Дом"
+    home:"Дом",
+    about:"O Hac",
+    testimonials:"Oбзоры"
   }
 };

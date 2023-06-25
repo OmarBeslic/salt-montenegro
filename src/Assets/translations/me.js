@@ -16,6 +16,9 @@ export const transME = {
     russian: "Ruski",
   },
   page:{
-    home:"Početna"
+    home:"Početna",
+    about:"O nama",
+    testimonials:"Recenzije"
+
   }
 };

@@ -6,11 +6,10 @@ export const StyledTeamSection = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 330px;
-  margin:100px 0;
+  margin:80px 0;
 
   .meet-team {
-   
+   margin-bottom: 30px;
 
     display: flex;
     align-items: end;
@@ -45,7 +44,7 @@ export const StyledTeamSection = styled.div`
     width: 100%;
     display: flex;
     align-items: end;
-    justify-content: space-around;
+    justify-content: center;
   }
   @media (max-width: 1024px) {
     height: unset;

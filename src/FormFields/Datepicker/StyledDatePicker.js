@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
-export const StyledDatePicker = styled(DatePicker)`
-
-`
+import { LocalizationProvider } from "@mui/x-date-pickers";
+export const StyledDatePicker = styled(LocalizationProvider)`
+    width: 100% !important;
+  .MuiInputBase-root {
+  }
+`;

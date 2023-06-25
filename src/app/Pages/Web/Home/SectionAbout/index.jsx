@@ -1,16 +1,20 @@
 import React from "react";
+import useTranslate from "../../../../../Hooks/useTranslate";
+import { useSelector } from "react-redux";
+
 import { StyledSectionAbout } from "./StyledSectionAbout";
-import rudder from "../../../../../Assets/images/volan.webp";
 import fishingRod from "../../../../../Assets/images/static-right.webp";
 import anchor from "../../../../../Assets/images/sidroo.webp";
 import fish from "../../../../../Assets/images/fish.webp";
 import boat from "../../../../../Assets/images/boat.webp";
-import HomeForm from "./HomeForm";
+
 function SectionAbout() {
   // Fetch all tours
   // Save tour, date and number of peoples in redux
   // on button click go to tours page with that filters selected
   // Send that as props to home form
+  const p = useTranslate();
+  const home = useSelector((state) => state.home?.homepage);
   return (
     <StyledSectionAbout>
       <div className="about-content">
@@ -30,14 +34,9 @@ function SectionAbout() {
             </div>
           </div>
           <div className="about-desc-div">
-            <span>About Salt Montenegro</span>
-            <h1>Welcome to best Fishing Platform</h1>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have in some form by injected humour randomised
-              words which don't look even slightly believable quis nostrud
-              exercitation ullamco laboris nisi ut aliquip
-            </p>
+            <span>{p(home?.homeAboutSubtitle)}</span>
+            <h1>{p(home?.homeAboutTitle)}</h1>
+            <p>{p(home?.homeAboutText)}</p>
           </div>
         </div>
       </div>

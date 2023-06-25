@@ -5,13 +5,17 @@ export const StyledBlogSection = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  margin: 0 0 50px;
+  /* border: 2px solid red; */
+  background: linear-gradient(to bottom, #fff 85%, var(--primary) 15%);
   .container {
+    margin: 50px 0 0;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
+    background: #fff;
     align-items: start;
-
-    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px -20px 20px 20px;
     width: 85%;
     .left-content {
       width: 50%;
@@ -39,15 +43,15 @@ export const StyledBlogSection = styled.div`
         }
         .about-blogs {
           color: var(--primary);
-          width: 75%;
+          width: 90%;
           text-align: center;
         }
       }
       .blogs-grid {
-        display: grid;
-        grid-template-columns: 350px 350px;
-        place-content: center;
-        place-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 15px;
         & > * {
           color: var(--textMain);
@@ -56,7 +60,7 @@ export const StyledBlogSection = styled.div`
       .all-blogs-btn {
         margin: 45px 0 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         svg {
           height: 15px;
@@ -64,7 +68,7 @@ export const StyledBlogSection = styled.div`
       }
     }
     .right-content {
-      width: 40%;
+      width: 50%;
       height: 100%;
       display: flex;
       align-items: center;
@@ -75,14 +79,36 @@ export const StyledBlogSection = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-bottom: 100px;
+        /* margin-bottom: 100px; */
+      }
+      .contact-form{
+        width: 95%;
+        min-height: 150px;
+        min-height: 610px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        .fields{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        button{
+          margin: unset;
+          position: absolute;
+          bottom: 0;
+        }
       }
 
       h2 {
         margin: 0 0 20px 0;
         color: var(--primary);
       }
-      span {
+      .subtitle {
         color: var(--primary);
         font-family: Great Vibes, "cursive";
         font-weight: 400;
@@ -93,6 +119,9 @@ export const StyledBlogSection = styled.div`
         width: 75%;
         text-align: center;
       }
+    }
+    button{
+      width: 40%;
     }
   }
   @media (max-width: 1024px) {

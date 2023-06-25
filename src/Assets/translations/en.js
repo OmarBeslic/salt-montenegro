@@ -4,7 +4,7 @@ export const transEN = {
     about: "About Us",
     contact: "Contact",
     blog: "Blog",
-    testimonials: "Testimonials",
+    testimonials: "Leave review",
     services: "Our services",
     tours: "Tours",
     booking: "Booking",
@@ -15,7 +15,4 @@ export const transEN = {
     english: "English",
     russian: "Russian",
   },
-  page:{
-    home:"Home"
-  }
 };

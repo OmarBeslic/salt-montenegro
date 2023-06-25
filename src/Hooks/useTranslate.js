@@ -6,7 +6,6 @@ export default function useTranslate() {
   const lang = i18next.language;
 
   const translate = (key) => {
-    console.log(key, "translationskey");
     let translation = translations?.find((el) => el?.slug === key);
     return translation?.[lang] || key;
   };

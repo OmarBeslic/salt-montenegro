@@ -30,7 +30,6 @@ export default function LangBtn({scrolled}) {
     LANGS[i18n.language === "en" ? 1 : i18n.language === "me" ? 0 : 2];
 
   const openLang = (code) => {
-    console.log(code, "koddd");
     i18n.changeLanguage(code);
     setOpen(!open);
   };

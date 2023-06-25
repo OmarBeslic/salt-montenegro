@@ -12,17 +12,10 @@ function DesktopNav({ scrolled }) {
 
   const links = [
     { route: "/home", item: t("nav.home") },
-    { route: "/about-us", item: t("nav.about") },
+    { route: "/tours", item: t("nav.tours") },
     { route: "/blog", item: t("nav.blog") },
-    { route: "/testimonials", item: t("nav.testimonials") },
-    {
-      item: t("nav.services"),
-      children: [
-        { route: "/tours", item: t("nav.tours") },
-        { route: "/booking", item: t("nav.booking") },
-        { route: "/gallery", item: t("nav.gallery") },
-      ],
-    },
+    { route: "/gallery", item: t("nav.gallery") },
+    { route: "/about-us", item: t("nav.about") },
   ];
   return (
     <StyledDesktopNav scrolled={scrolled}>
@@ -43,10 +36,8 @@ function DesktopNav({ scrolled }) {
         <div className="links">
           <div className="nav-links">
             {links?.map((el) => {
-              if (el?.children)
-                return <Dropdown name={el.item} items={el?.children} scrolled={scrolled} />;
               return (
-                <Typography sx={{ p: 2 }}>
+                <Typography sx={{ p: 2 }} key={el?.item}>
                   <Link to={el?.route}>{el?.item}</Link>
                 </Typography>
               );
@@ -55,9 +46,9 @@ function DesktopNav({ scrolled }) {
 
           <div className="lang-contact">
             <Typography sx={{ p: 2 }}>
-              <Link to={"/contact"}>{t("nav.contact")}</Link>
+              <Link to={"/testimonials"}>{t("nav.testimonials")}</Link>
             </Typography>
-            <LangBtn scrolled={scrolled}/>
+            <LangBtn scrolled={scrolled} />
           </div>
         </div>
       </div>

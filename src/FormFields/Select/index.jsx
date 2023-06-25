@@ -1,24 +1,14 @@
 import React from "react";
 import { StyledSelect } from "./StyledSelect";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { populateHomeForm } from "../../app/store/slices/homeSlice";
 
-function SelectField({ name, label, options }) {
-  const dispatch = useDispatch();
-  const [value, setValue] = useState("");
-  const handleChange = (e) => {
-    const option = options?.find((el) => el?.value?.includes(e?.target?.value));
-    setValue(e?.target?.value);
-    dispatch(
-      populateHomeForm({ name, value: option?.value, label: option?.label })
-    );
-    console.log(option, name, "sliceVar");
+function SelectField({ name, label, error, options,value, ...otherProps }) {
+  const styles = {
+    height: "23px",
+    color: "crimson",
   };
-  console.log(value, "selectvalue");
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth sx={{ margin: " 0 15px" }}>
       <InputLabel id={name}>{label}</InputLabel>
       <StyledSelect
         variant="filled"
@@ -26,12 +16,17 @@ function SelectField({ name, label, options }) {
         name={name}
         id={name}
         label={label}
-        onChange={(e) => handleChange(e)}
+        {...otherProps}
       >
         {options?.map((el) => {
-          return <MenuItem value={el?.value}>{el?.label}</MenuItem>;
+          return (
+            <MenuItem key={el?.value} value={el?.value}>
+              {el?.label}
+            </MenuItem>
+          );
         })}
       </StyledSelect>
+      <span style={styles}>{error}</span>
     </FormControl>
   );
 }

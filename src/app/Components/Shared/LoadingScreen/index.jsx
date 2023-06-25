@@ -4,8 +4,8 @@ import { StyledLoadingScreen } from "./StyledLoading";
 function LoadingScreen() {
   return (
     <StyledLoadingScreen>
-      <div class="circle">
-        <div class="wave"></div>
+      <div className="circle">
+        <div className="wave"></div>
       </div>
     </StyledLoadingScreen>
   );

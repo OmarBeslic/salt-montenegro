@@ -13,18 +13,12 @@ function MobileNav({ scrolled }) {
   const [navOpened, setNavOpened] = useState(false);
   const links = [
     { route: "/home", item: t("nav.home") },
-    { route: "/about-us", item: t("nav.about") },
-    { route: "/contact", item: t("nav.contact") },
+    { route: "/tours", item: t("nav.tours") },
     { route: "/blog", item: t("nav.blog") },
+    { route: "/gallery", item: t("nav.gallery") },
+    { route: "/about-us", item: t("nav.about") },
     { route: "/testimonials", item: t("nav.testimonials") },
-    {
-      item: t("nav.services"),
-      children: [
-        { route: "/tours", item: t("nav.tours") },
-        { route: "/booking", item: t("nav.booking") },
-        { route: "/gallery", item: t("nav.gallery") },
-      ],
-    },
+    
   ];
   return (
     <StyledMobileNav>
@@ -34,12 +28,12 @@ function MobileNav({ scrolled }) {
           <div className="lang-nav">
             <LangBtn scrolled={scrolled} />
             <div
-              class={`container ${navOpened ? "change" : ""}`}
+              className={`container ${navOpened ? "change" : ""}`}
               onClick={() => setNavOpened(!navOpened)}
             >
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
+              <div className="bar1"></div>
+              <div className="bar2"></div>
+              <div className="bar3"></div>
             </div>
           </div>
         </div>
@@ -47,16 +41,8 @@ function MobileNav({ scrolled }) {
       <div className="div"></div>
       <div className={`nav-opened ${navOpened ? "active" : ""}`}>
         {links?.map((el) => {
-          if (el?.children)
-            return (
-              <Dropdown
-                name={el.item}
-                items={el?.children}
-                scrolled={scrolled}
-              />
-            );
           return (
-            <Typography sx={{ p: 2 }}>
+            <Typography sx={{ p: 2 }} key={el?.item}>
               <Link to={el?.route} onClick={() => setNavOpened(false)}>
                 {el?.item}
               </Link>

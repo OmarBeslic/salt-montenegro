@@ -8,7 +8,6 @@ export const StyledTourSection = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 2;
-  box-shadow: 0px 10px 5px #fff, 0px -10px 5px #fff;
   min-height: 85vh;
   .overlay-tour {
     background-image: url(${clocks});
@@ -25,7 +24,7 @@ export const StyledTourSection = styled.div`
     bottom: 0;
   }
   .tours-header {
-    background: linear-gradient(0deg, transparent 0%, white 100%);
+    /* background: linear-gradient(0deg, transparent 0%, white 100%); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +60,7 @@ export const StyledTourSection = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(0deg, white 0%, transparent 100%);
+    /* background: linear-gradient(0deg, white 0%, transparent 100%); */
     z-index: 2;
 
     text-align: center;

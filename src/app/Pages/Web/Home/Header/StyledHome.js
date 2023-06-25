@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledHeader = styled.div`
   position: relative;
   width: auto;
+  width: 100%;
   overflow: hidden;
   .overlay {
     position: absolute;
@@ -24,8 +25,6 @@ export const StyledHeader = styled.div`
     }
   }
   .bg-video {
-    top: 0;
-    left: 0;
     width: ${(props) => (props.isMobile ? "100%" : "100vw")};
     height: 95vh;
     object-fit: cover;

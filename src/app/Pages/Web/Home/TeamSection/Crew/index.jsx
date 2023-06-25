@@ -10,30 +10,30 @@ const StyledSailor = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 650px;
-  padding: 10px 15px;
+  padding: 20px 40px;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   border-radius: 10px;
   color: var(--primary);
+  margin: 0 50px;
   .about-sailor {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 0 0 0 15px;
     .name-more {
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 5px;
+      justify-content: center;
+      margin-bottom: 20px;
     }
     .socials {
       width: 100%;
+      margin-top: 20px;
       display: flex;
       align-items: center;
-      justify-content: start;
+      justify-content: center;
       /* width: 30%; */
       a {
         text-decoration: none;
@@ -42,8 +42,8 @@ const StyledSailor = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 45px;
-        height: 45px;
+        width: 55px;
+        height: 55px;
         border-radius: 100px;
         background: rgba(255, 255, 255, 0.5);
         transition: all 0.3s ease-in-out;
@@ -62,14 +62,14 @@ const StyledSailor = styled.div`
   }
   .img-backg {
     height: 100%;
-    width: 160px;
+    width: 270px;
     background-color: var(--primary);
     display: flex;
     margin: 0 10px;
     align-items: center;
     justify-content: center;
     img {
-      width: 180px;
+      width: 290px;
       margin: 10px 0;
     }
   }
@@ -86,8 +86,8 @@ const StyledSailor = styled.div`
         width: 230px;
       }
     }
-    .about-sailor{
-      .socials{
+    .about-sailor {
+      .socials {
         justify-content: center;
       }
     }
@@ -97,18 +97,13 @@ const StyledSailor = styled.div`
 function Sailor() {
   return (
     <StyledSailor>
-      <div className="img-backg">
-        <img src={crew} alt="" />
-      </div>
       <div className="about-sailor">
         <div className="name-more">
-          <h2>John Doe</h2> <SecondaryButton font="18px" hover={true} />
+          <h2>John Doe</h2> 
         </div>
-        <p>
-          We have a very high candidate success rate as well as a reputation for
-          producing well trained Dive Instructors. The program is a mixture
-          of...
-        </p>
+        <div className="img-backg">
+          <img src={crew} alt="" />
+        </div>
         <div className="socials">
           <Link to="https://wa.me/69627028" target="_blank">
             <FacebookIcon />
