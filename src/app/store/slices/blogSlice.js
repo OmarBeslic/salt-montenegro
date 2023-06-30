@@ -39,7 +39,11 @@ export const getSingleBlog = createAsyncThunk(
 export const blogSlice = createSlice({
   name: "blogs",
   initialState,
-  reducers: {},
+  reducers: {
+    cleanUpSingle:(state,action)=>{
+      state.singleBlog = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllBlogs.pending, (state, action) => {
@@ -85,6 +89,6 @@ export const blogSlice = createSlice({
   },
 });
 
-export const {} = blogSlice.actions;
+export const {cleanUpSingle} = blogSlice.actions;
 
 export default blogSlice.reducer;

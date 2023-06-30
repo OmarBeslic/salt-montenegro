@@ -20,8 +20,8 @@ export const StyledTour = styled.div`
     color: var(--textMain);
   }
 
-  h3 {
-    font-size: 50px;
+  h2 {
+    font-size: 20px;
   }
   button {
     margin: 0 0 0 auto;
@@ -30,7 +30,7 @@ export const StyledTour = styled.div`
     }
   }
 
-  box-shadow: rgba(1, 32, 54, 0.8) 0px 0px 0px 2000px inset;
+  box-shadow: rgba(1, 32, 54, 0.3) 0px 0px 0px 2000px inset;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transition: all 0.3s ease-in-out;
@@ -42,6 +42,13 @@ export const StyledTour = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: left;
+    padding:10px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     .tour-description {
       margin-top: 20px;
       overflow: hidden;
@@ -50,10 +57,10 @@ export const StyledTour = styled.div`
       -webkit-line-clamp: 4;
       line-clamp: 4;
       -webkit-box-orient: vertical;
-      
-    }h2{
-        width:100%;
-      }
+    }
+    h2 {
+      width: 100%;
+    }
     .price-duration {
       display: flex;
       align-items: center;

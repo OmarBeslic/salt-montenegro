@@ -9,7 +9,8 @@ export const StyledDesktopNav = styled.div`
   display: flex;
   align-items: center;
   width: 100vw;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-bottom: ${(props) =>
+    props.scrolled ? "none" : " 0.5px solid rgba(255, 255, 255, 0.5)"};
   transition: all 0.3s ease-in-out;
   box-shadow: ${(props) =>
     props.scrolled
@@ -35,7 +36,8 @@ export const StyledDesktopNav = styled.div`
     width: auto;
     height: 100%;
     width: 100%;
-    background: ${(props) => (props.scrolled ? "var(--backgroundMain)" : "unset")};
+    background: ${(props) =>
+      props.scrolled ? "var(--backgroundMain)" : "unset"};
     transition: all 0.3s ease-in-out;
     .contact-info {
       height: 25%;

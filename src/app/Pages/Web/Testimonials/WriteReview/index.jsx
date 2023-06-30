@@ -9,10 +9,10 @@ import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutt
 import { postReview } from "../../../../store/slices/reviewsSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { showToast } from "../../../../../FormFields/helpers";
 function WriteReview() {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state?.layout?.countries);
-  const [error, setIsError] = useState({});
 
   const [review, setReview] = useState({
     name: "",
@@ -23,52 +23,32 @@ function WriteReview() {
     countryFlag: "",
   });
 
-  const getFile = (e) => {
-    setReview({ ...review, userPhoto: e });
-  };
-
   useEffect(() => {
     dispatch(getCountryList());
   }, []);
 
   const validateComponent = ({ key, val }) => {
     if (!val) {
-      return {
-        [key]: "This field is required. Please enter a value.",
-      };
-    } else {
-      return {
-        [key]: "",
-      };
+      showToast("error", "This field is required. Please enter a value.");
+      return false;
     }
+    return true;
   };
 
   const handleSendReview = () => {
-    const errors = {};
+    let isValid = true;
 
     Object.keys(review)
-      .filter((key) => key !== "userPhoto")
+      .filter((key) => key !== "userPhoto" && key !== "countryFlag")
       .forEach((key) => {
-        const error = validateComponent({ key, val: review[key] });
-        if (error[key]) {
-          errors[key] = error[key];
+        if (!validateComponent({ key, val: review[key] })) {
+          isValid = false;
         }
       });
 
-    setIsError(errors);
-
-    if (Object.keys(errors).length === 0) {
+    if (isValid) {
       dispatch(postReview(review)).then((res) => {
-        toast.success("Thank you, your review has been submitted.", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+        showToast("success", "Thank you, your review has been submitted.");
         setReview({
           name: "",
           lastName: "",
@@ -80,13 +60,13 @@ function WriteReview() {
       });
     }
   };
+
   return (
     <div className="review-form">
       <ToastContainer />
 
       <InputField
         label="Name"
-        error={error?.name}
         value={review?.name}
         onChange={(e) =>
           setReview({
@@ -98,7 +78,6 @@ function WriteReview() {
       <InputField
         value={review?.lastName}
         label="Last name"
-        error={error?.lastName}
         onChange={(e) =>
           setReview({
             ...review,
@@ -109,7 +88,6 @@ function WriteReview() {
       <InputField
         value={review?.userEmail}
         label="Email"
-        error={error?.userEmail}
         onChange={(e) =>
           setReview({
             ...review,
@@ -121,7 +99,6 @@ function WriteReview() {
       <SelectField
         value={review?.country}
         name="country"
-        error={error?.country}
         label="Your country"
         options={countries}
         onChange={(e) =>
@@ -136,7 +113,6 @@ function WriteReview() {
       />
       <InputField
         value={review?.review}
-        error={error?.review}
         label="Review"
         multiline
         rows={4}

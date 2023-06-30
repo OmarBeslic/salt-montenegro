@@ -79,8 +79,9 @@ export const StyledBlog = styled.div`
       justify-content: center;
       flex-direction: column;
     }
-  }
-  h2 {
+    h2 {
     text-align: center;
   }
+  }
+ 
 `;

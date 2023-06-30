@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 //
-import { getSingleBlog } from "../../../../store/slices/blogSlice";
+import {
+  cleanUpSingle,
+  getSingleBlog,
+} from "../../../../store/slices/blogSlice";
 //
 import { StyledSingleBlog } from "./StyledSingleBlog";
 import Waves from "../../../../../Assets/Animations/Waves";
@@ -18,6 +21,10 @@ function SingleBlog() {
 
   useEffect(() => {
     dispatch(getSingleBlog(id));
+
+    return () => {
+      dispatch(cleanUpSingle(null));
+    };
   }, [dispatch, id]);
 
   return (
@@ -44,9 +51,7 @@ function SingleBlog() {
           <img src={singleBlog?.blogPicTwo} alt="" />
           <p>{p(singleBlog?.blogContentThree)}</p>
         </div>
-        <SecondaryButton onClick={() => navigate(-1)}>
-          Go back
-        </SecondaryButton>
+        <SecondaryButton onClick={() => navigate(-1)}>Go back</SecondaryButton>
       </div>
     </StyledSingleBlog>
   );

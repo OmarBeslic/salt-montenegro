@@ -10,6 +10,7 @@ const Testimonials = lazy(() => import("./app/Pages/Web/Testimonials"));
 const Gallery = lazy(() => import("./app/Pages/Web/Gallery"));
 const Blogs = lazy(() => import("./app/Pages/Web/Blogs"));
 const SingleBlog = lazy(() => import("./app/Pages/Web/Blogs/SingleBlog"));
+const ToursPage = lazy(() => import("./app/Pages/Web/Tours"));
 const NotFound = lazy(() => import("./app/Components/User/NotFound"));
 
 export default function Router() {
@@ -29,7 +30,7 @@ export default function Router() {
         { path: "/gallery", element: <Gallery /> },
         { path: "/blog", element: <Blogs /> },
         { path: "/blog/:id", element: <SingleBlog /> },
-        // { path: "/gallery", element: <Gallery /> },
+        { path: "/tours", element: <ToursPage /> },
       ],
     },
     { path: "404", element: <NotFound /> },

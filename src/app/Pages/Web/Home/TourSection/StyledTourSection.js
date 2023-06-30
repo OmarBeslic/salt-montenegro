@@ -14,7 +14,7 @@ export const StyledTourSection = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: rgba(1, 32, 54, 0.5) 0px 0px 0px 2000px inset;
+    box-shadow: rgba(1, 32, 54, 0.3) 0px 0px 0px 2000px inset;
     background-attachment: ${(props) =>
       props?.notDesktop ? "unset" : "fixed"};
     position: absolute;
