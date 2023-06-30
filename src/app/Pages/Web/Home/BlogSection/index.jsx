@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
-import { StyledBlogSection } from "./StyledBlogSection";
-import Blog from "./Blog";
+import { useNavigate } from "react-router-dom";
+//
 import { useDispatch, useSelector } from "react-redux";
+import { cleanUpBlogs, getAllBlogs } from "../../../../store/slices/blogSlice";
 import { getCountryList } from "../../../../store/slices/layoutSlice";
+//
 import useTranslate from "../../../../../Hooks/useTranslate";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
+//
 import SendMesage from "./Blog/SendMessage";
-import { useNavigate } from "react-router-dom";
-import { getAllBlogs } from "../../../../store/slices/blogSlice";
+import { StyledBlogSection } from "./StyledBlogSection";
+import Blog from "./Blog";
 
 function BlogSection() {
   const dispatch = useDispatch();
@@ -19,6 +22,9 @@ function BlogSection() {
   useEffect(() => {
     dispatch(getCountryList());
     dispatch(getAllBlogs());
+    return () => {
+      dispatch(cleanUpBlogs("blogs"));
+    };
   }, []);
 
   return (
@@ -31,7 +37,7 @@ function BlogSection() {
             <p className="about-blogs">{p(home?.homeBlogText)}</p>
           </div>
           <div className="blogs-grid">
-            {blogs?.slice(0, 2).map((el,idx) => {
+            {blogs?.slice(0, 2).map((el, idx) => {
               return <Blog blog={el} key={idx} />;
             })}
           </div>

@@ -40,9 +40,9 @@ export const blogSlice = createSlice({
   name: "blogs",
   initialState,
   reducers: {
-    cleanUpSingle:(state,action)=>{
-      state.singleBlog = action.payload
-    }
+    cleanUpBlogs: (state, action) => {
+      state[action.payload] = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -89,6 +89,6 @@ export const blogSlice = createSlice({
   },
 });
 
-export const {cleanUpSingle} = blogSlice.actions;
+export const {cleanUpBlogs} = blogSlice.actions;
 
 export default blogSlice.reducer;

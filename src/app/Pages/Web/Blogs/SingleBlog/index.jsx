@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 //
 import {
-  cleanUpSingle,
+  cleanUpBlogs,
   getSingleBlog,
 } from "../../../../store/slices/blogSlice";
 //
@@ -23,7 +23,7 @@ function SingleBlog() {
     dispatch(getSingleBlog(id));
 
     return () => {
-      dispatch(cleanUpSingle(null));
+      dispatch(cleanUpBlogs("singleBlog"));
     };
   }, [dispatch, id]);
 

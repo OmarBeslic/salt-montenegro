@@ -40,8 +40,8 @@ export const toursSlice = createSlice({
   name: "tours",
   initialState,
   reducers: {
-    cleanUpSingle: (state, action) => {
-      state.singleTour = action.payload;
+    cleanUpTours: (state, action) => {
+      state[action.payload] = null;
     },
   },
   extraReducers: (builder) => {
@@ -89,6 +89,6 @@ export const toursSlice = createSlice({
   },
 });
 
-export const { cleanUpSingle } = toursSlice.actions;
+export const { cleanUpTours } = toursSlice.actions;
 
 export default toursSlice.reducer;

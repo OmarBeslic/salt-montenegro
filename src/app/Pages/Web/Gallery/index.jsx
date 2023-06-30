@@ -5,7 +5,7 @@ import Page from "../../../Components/User/Page";
 import Images from "./Images";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAllPhotos } from "../../../store/slices/gallerySlice";
+import { cleanUpGallery, getAllPhotos } from "../../../store/slices/gallerySlice";
 import { useState } from "react";
 import { useRef } from "react";
 import { getClassName } from "../../../../FormFields/helpers";
@@ -23,6 +23,9 @@ function Gallery() {
 
   useEffect(() => {
     dispatch(getAllPhotos());
+    return()=>{
+      dispatch(cleanUpGallery("photos"))
+    }
   }, []);
 
   useEffect(() => {

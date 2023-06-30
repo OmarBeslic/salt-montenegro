@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 //
 import { useTranslation } from "react-i18next";
 //
-import { getHomepage } from "../../../store/slices/homeSlice";
+import { cleanUpHome, getHomepage } from "../../../store/slices/homeSlice";
 //
 import Page from "../../../Components/User/Page";
 import Header from "./Header";
@@ -21,6 +21,9 @@ function Homepage() {
 
   useEffect(() => {
     !home && dispatch(getHomepage());
+    return ()=>{
+      dispatch(cleanUpHome("homepage"))
+    }
   }, []);
 
   return (

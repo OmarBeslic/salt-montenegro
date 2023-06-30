@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
-import { StyledTourSection } from "./StyledTourSection";
-import Tour from "./Tour";
-import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 import { useNavigate } from "react-router-dom";
-import boat from "../../../../../Assets/images/boat2.webp";
+//
 import { useDispatch, useSelector } from "react-redux";
+import { cleanUpTours, getAllTours } from "../../../../store/slices/tourSlice";
+//
 import useTranslate from "../../../../../Hooks/useTranslate";
-import { getAllTours } from "../../../../store/slices/tourSlice";
+//
+import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
+//
+import Tour from "./Tour";
+import boat from "../../../../../Assets/images/boat2.webp";
+import { StyledTourSection } from "./StyledTourSection";
+
 function TourSection() {
   const navigate = useNavigate();
   const p = useTranslate();
@@ -18,6 +23,9 @@ function TourSection() {
 
   useEffect(() => {
     dispatch(getAllTours());
+    return () => {
+      dispatch(cleanUpTours("tours"));
+    };
   }, []);
 
   console.log(tours, "tours");

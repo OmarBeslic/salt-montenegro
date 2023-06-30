@@ -19,7 +19,11 @@ export const getAllPhotos = createAsyncThunk("all/photos", async () => {
 export const photoSlice = createSlice({
   name: "tours",
   initialState,
-  reducers: {},
+  reducers: {
+    cleanUpGallery: (state, action) => {
+      state[action.payload] = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllPhotos.pending, (state, action) => {
@@ -45,6 +49,6 @@ export const photoSlice = createSlice({
   },
 });
 
-export const {} = photoSlice.actions;
+export const {cleanUpGallery} = photoSlice.actions;
 
 export default photoSlice.reducer;

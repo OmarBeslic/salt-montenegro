@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //
-import { getAllBlogs } from "../../../store/slices/blogSlice";
+import { cleanUpBlogs, getAllBlogs } from "../../../store/slices/blogSlice";
 import { useTranslation } from "react-i18next";
 //
 import { StyledBlogs } from "./StyledBlogs";
@@ -16,6 +16,10 @@ function Blogs() {
 
   useEffect(() => {
     dispatch(getAllBlogs());
+
+    return () => {
+      dispatch(cleanUpBlogs("blogs"));
+    };
   }, []);
 
   return (
@@ -29,8 +33,8 @@ function Blogs() {
         <div className="blogs-container">
           <Waves />
           <div className="blogs-grid">
-            {blogs?.map((el,idx) => {
-              return <Blog blog={el} key={idx}/>;
+            {blogs?.map((el, idx) => {
+              return <Blog blog={el} key={idx} />;
             })}
           </div>
         </div>

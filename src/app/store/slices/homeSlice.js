@@ -28,6 +28,9 @@ export const homeSlice = createSlice({
         },
       };
     },
+    cleanUpHome: (state, action) => {
+      state[action.payload] = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -57,6 +60,6 @@ export const homeSlice = createSlice({
   },
 });
 
-export const { populateHomeForm } = homeSlice.actions;
+export const { populateHomeForm,cleanUpHome } = homeSlice.actions;
 
 export default homeSlice.reducer;

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { StyledTours } from "./StyledTours";
 import Waves from "../../../../../Assets/Animations/Waves";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllTours } from "../../../../store/slices/tourSlice";
+import { cleanUpTours, getAllTours } from "../../../../store/slices/tourSlice";
 import Tour from "../../Home/TourSection/Tour";
 
 function AllTours() {
@@ -11,8 +11,12 @@ function AllTours() {
 
   useEffect(() => {
     dispatch(getAllTours());
+
+    return () => {
+      dispatch(cleanUpTours("tours"));
+    };
   }, []);
-  console.log(tours,"tours")
+  console.log(tours, "tours");
   return (
     <StyledTours>
       <div className="tours-header">
