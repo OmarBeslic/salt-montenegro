@@ -24,7 +24,7 @@ export const StyledDropdown = styled.div`
   ul {
     position: absolute;
     left: 25px;
-    background: #fff;
+    background: var(--backgroundMain);
     margin: 10px 0;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ export const StyledDropdown = styled.div`
         border-radius: 10px;
         font-size: 18px;
         &:hover {
-          color: #fff;
+          color: var(--backgroundMain);
           background-color: var(--primary);
         }
       }
@@ -59,7 +59,7 @@ export const StyledDropdown = styled.div`
 export const StyledAccordion = styled.div`
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--backgroundMain);
   border: 1px solid var(--primary);
   border-radius: 10px;
   margin-bottom: 15px;

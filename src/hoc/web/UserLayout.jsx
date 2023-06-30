@@ -5,6 +5,7 @@ import Footer from "../../app/Components/User/Footer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getAllTranslations } from "../../app/store/slices/translationsSlice";
+import ImageModal from "../../app/Components/User/ImageModal";
 
 function UserLayout() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function UserLayout() {
 
   return (
     <>
+      <ImageModal />
       <Navigation />
       <Outlet />
       <Footer />

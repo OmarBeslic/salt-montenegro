@@ -5,6 +5,7 @@ import blogSlice from "./slices/blogSlice";
 import translationsSlice from "./slices/translationsSlice";
 import tourSlice from "./slices/tourSlice";
 import reviewsSlice from "./slices/reviewsSlice";
+import gallerySlice from "./slices/gallerySlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     translations: translationsSlice,
     tours: tourSlice,
     reviews: reviewsSlice,
+    gallery:gallerySlice
   },
 });

@@ -1,18 +1,20 @@
 import React from "react";
 import useTranslate from "../../../../../Hooks/useTranslate";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { StyledSectionAbout } from "./StyledSectionAbout";
 import fishingRod from "../../../../../Assets/images/static-right.webp";
 import anchor from "../../../../../Assets/images/sidroo.webp";
 import fish from "../../../../../Assets/images/fish.webp";
 import boat from "../../../../../Assets/images/boat.webp";
+import { openModal } from "../../../../store/slices/layoutSlice";
 
 function SectionAbout() {
   // Fetch all tours
   // Save tour, date and number of peoples in redux
   // on button click go to tours page with that filters selected
   // Send that as props to home form
+  const dispatch = useDispatch();
   const p = useTranslate();
   const home = useSelector((state) => state.home?.homepage);
   return (
@@ -22,15 +24,57 @@ function SectionAbout() {
         <div className="left-content">
           <div className="photos-div">
             <div className="photo-left">
-              <img src={fish} alt="Tuna fish" className="fish" />
-              <img src={boat} alt="Boat" />
+              <img
+                src={fish}
+                alt="Tuna fish"
+                className="fish"
+                onClick={() =>
+                  dispatch(
+                    openModal({ name: "image", isOpen: true, data: fish })
+                  )
+                }
+              />
+              <img
+                src={boat}
+                alt="Boat"
+                onClick={() =>
+                  dispatch(
+                    openModal({ name: "image", isOpen: true, data: boat })
+                  )
+                }
+              />
             </div>
             <div className="photo-right">
-              <img src={fishingRod} alt="Fishing Rod" />
+              <img
+                src={fishingRod}
+                alt="Fishing Rod"
+                onClick={() =>
+                  dispatch(
+                    openModal({ name: "image", isOpen: true, data: fishingRod })
+                  )
+                }
+              />
             </div>
             <div className="photo-left">
-              <img src={boat} alt="Boat" />
-              <img src={fish} alt="Tuna fish" className="fish" />
+              <img
+                src={boat}
+                alt="Boat"
+                onClick={() =>
+                  dispatch(
+                    openModal({ name: "image", isOpen: true, data: boat })
+                  )
+                }
+              />
+              <img
+                src={fish}
+                alt="Tuna fish"
+                className="fish"
+                onClick={() =>
+                  dispatch(
+                    openModal({ name: "image", isOpen: true, data: fish })
+                  )
+                }
+              />
             </div>
           </div>
           <div className="about-desc-div">

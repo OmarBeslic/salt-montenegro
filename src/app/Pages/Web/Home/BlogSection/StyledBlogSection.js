@@ -6,13 +6,17 @@ export const StyledBlogSection = styled.div`
   justify-content: space-evenly;
   width: 100%;
   /* border: 2px solid red; */
-  background: linear-gradient(to bottom, #fff 85%, var(--primary) 15%);
+  background: linear-gradient(
+    to bottom,
+    var(--backgroundMain) 85%,
+    var(--primary) 15%
+  );
   .container {
     margin: 50px 0 0;
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
-    background: #fff;
+    background: var(--backgroundMain);
     align-items: start;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px -20px 20px 20px;
@@ -53,6 +57,7 @@ export const StyledBlogSection = styled.div`
         justify-content: center;
         align-items: center;
         gap: 15px;
+        width: 100%;
         & > * {
           color: var(--textMain);
         }
@@ -81,7 +86,7 @@ export const StyledBlogSection = styled.div`
         flex-direction: column;
         /* margin-bottom: 100px; */
       }
-      .contact-form{
+      .contact-form {
         width: 95%;
         min-height: 150px;
         min-height: 610px;
@@ -90,14 +95,14 @@ export const StyledBlogSection = styled.div`
         justify-content: space-between;
         flex-direction: column;
         position: relative;
-        .fields{
+        .fields {
           width: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: column;
         }
-        button{
+        button {
           margin: unset;
           position: absolute;
           bottom: 0;
@@ -120,7 +125,7 @@ export const StyledBlogSection = styled.div`
         text-align: center;
       }
     }
-    button{
+    button {
       width: 40%;
     }
   }
@@ -133,23 +138,25 @@ export const StyledBlogSection = styled.div`
         width: 95% !important;
         border: unset;
         margin-bottom: 20px;
-        
       }
-      .right-content{
-        width: 95%;
+      .right-content {
+        width: 100%;
+        border-top: 1px solid rgba(1, 32, 54, 0.3);
+        padding: 20px 0;
+        button {
+          width: unset;
+        }
       }
     }
   }
   @media (max-width: 576px) {
     .container {
-     
       .left-content {
-       
         .blogs-grid {
-          grid-template-columns: 1fr ;
+          grid-template-columns: 1fr;
         }
       }
-      .right-content{
+      .right-content {
         width: 95%;
       }
     }

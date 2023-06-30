@@ -25,5 +25,9 @@ export const StyledGallery = styled.div`
     }
   }
   @media (max-width: 1024px) {
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 `;

@@ -108,12 +108,15 @@ const StyledSailor = styled.div`
     }
   }
   @media (max-width: 1024px) {
+    max-width: 95%;
+    margin: 10px 0;
     &:first-child {
       margin-bottom: 20px;
     }
   }
   @media (max-width: 576px) {
-    flex-direction: column-reverse;
+    padding:unset;
+    flex-direction: column !important;
     width: 95%;
     .img-backg {
       img {
@@ -121,8 +124,20 @@ const StyledSailor = styled.div`
       }
     }
     .about-sailor {
+      align-items: center !important;
+      .name-more {
+        h2 {
+          text-align: center !important;
+          justify-content: center !important;
+          margin: 10px 0;
+        }
+      }
       .socials {
-        justify-content: center;
+        justify-content: center !important;
+      }
+      p {
+        width: 90% !important;
+        text-align: center !important;
       }
     }
   }

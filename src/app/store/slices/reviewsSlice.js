@@ -32,12 +32,11 @@ export const reviewsSlice = createSlice({
       })
       .addCase(getAllReviews.fulfilled, (state, action) => {
         let review = action?.payload?.data?.map((el) => {
-          const { name, lastName, userPhoto, country, countryFlag, review } =
+          const { name, lastName, country, countryFlag, review } =
             el?.attributes;
           return {
             name: name,
             lastName: lastName,
-            userPhoto: userPhoto,
             country: country,
             countryFlag: countryFlag,
             review,

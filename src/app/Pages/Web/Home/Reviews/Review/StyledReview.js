@@ -10,11 +10,11 @@ export const StyledReview = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
-    padding:20px 10px;
+    padding: 20px 10px;
     border-radius: 8px;
-    background: #fff;
+    background: var(--backgroundMain);
 
     & > * {
       color: var(--primary);
@@ -39,8 +39,11 @@ export const StyledReview = styled.div`
           align-items: center;
           justify-content: center;
           img {
-            width: 50px;
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
             margin-right: 10px;
+            border-radius: 100px;
           }
           span {
             color: var(--primary);
@@ -51,7 +54,7 @@ export const StyledReview = styled.div`
       .review {
         text-align: start;
         min-height: 100px;
-        max-height:150px;
+        max-height: 150px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -90,10 +93,11 @@ export const StyledReview = styled.div`
     }
   }
   @media (max-width: 576px) {
-    height: 470px !important;
+    margin: 20px 0;
     .mask {
       flex-direction: column;
       .name-review {
+        align-items: center;
         .person {
           align-items: center;
         }

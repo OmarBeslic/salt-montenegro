@@ -24,6 +24,7 @@ export const StyledBlog = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border-radius: 10px;
     img {
       /* flex-shrink: 0; */
       min-width: 100%;
@@ -32,6 +33,7 @@ export const StyledBlog = styled.div`
   }
   .blog-content {
     width: 73%;
+    margin: 0 0 0 15px;
     .tittle {
       text-decoration: underline;
     }
@@ -40,6 +42,9 @@ export const StyledBlog = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      & > * {
+        color: rgba(0, 0, 0, 0.5);
+      }
     }
     .blog {
       overflow: hidden;
@@ -58,5 +63,24 @@ export const StyledBlog = styled.div`
       color: rgb(177, 218, 231);
       transition: all 0.3s ease-in-out;
     }
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    height: unset;
+    .blog-picture {
+      width: 100%;
+      height: 200px;
+    }
+    .blog-content {
+      width: 100%;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  h2 {
+    text-align: center;
   }
 `;

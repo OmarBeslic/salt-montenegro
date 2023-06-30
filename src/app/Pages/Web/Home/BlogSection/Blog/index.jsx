@@ -1,24 +1,23 @@
 import React from "react";
 import { StyledBlog } from "./StyledBlog";
-import homeBg from "../../../../../../Assets/images/crew.webp";
+import useTranslate from "../../../../../../Hooks/useTranslate";
+import { useNavigate } from "react-router-dom";
 
-function Blog() {
+function Blog({ blog }) {
+  const p = useTranslate();
+  const navigate = useNavigate();
   return (
-    <StyledBlog bgImg={homeBg}>
+    <StyledBlog
+      bgImg={blog?.mainPicture}
+      onClick={() => navigate(`/blog/${blog?.id}`)}
+    >
       <div className="blog-picture" />
-
       <div className="blog-content">
-        <h2 className="tittle">Sunny days Montenegro</h2>
-        <span className="blog">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quia
-          nam quam? Ratione quam non laborum ipsa doloremquam? Ratione quam non
-          laborum ipsa doloremquam? Ratione quam non laborum ipsa doloremquam?
-          Ratione quam non laborum ipsa doloremquam? Ratione quam non laborum
-          ipsa dolorem
-        </span>
+        <h2 className="tittle">{p(blog?.blogTitleSlug)}</h2>
+        <span className="blog">{p(blog?.blogContent)}</span>
         <div className="by-date">
-          <span>John Doe</span>
-          <span>22/05/2023</span>
+          <span>{blog?.author}</span>
+          <span>{blog?.published}</span>
         </div>
       </div>
     </StyledBlog>

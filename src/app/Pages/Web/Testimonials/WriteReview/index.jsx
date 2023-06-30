@@ -19,7 +19,7 @@ function WriteReview() {
     lastName: "",
     country: "",
     review: "",
-    userPhoto: "",
+    userEmail: "",
     countryFlag: "",
   });
 
@@ -74,7 +74,7 @@ function WriteReview() {
           lastName: "",
           country: "",
           review: "",
-          userPhoto: "",
+          userEmail: "",
           countryFlag: "",
         });
       });
@@ -83,34 +83,41 @@ function WriteReview() {
   return (
     <div className="review-form">
       <ToastContainer />
-      <div className="first-fields">
-            
-        <File getFile={(e) => getFile(e)} error={error?.userPhoto} value={review?.userPhoto}/>
-        <div className="inputs">
-          <InputField
-            label="Name"
-            error={error?.name}
-            value={review?.name}
-            onChange={(e) =>
-              setReview({
-                ...review,
-                name: e.target.value,
-              })
-            }
-          />
-          <InputField
-            value={review?.lastName}
-            label="Last name"
-            error={error?.lastName}
-            onChange={(e) =>
-              setReview({
-                ...review,
-                lastName: e.target.value,
-              })
-            }
-          />
-        </div>
-      </div>
+
+      <InputField
+        label="Name"
+        error={error?.name}
+        value={review?.name}
+        onChange={(e) =>
+          setReview({
+            ...review,
+            name: e.target.value,
+          })
+        }
+      />
+      <InputField
+        value={review?.lastName}
+        label="Last name"
+        error={error?.lastName}
+        onChange={(e) =>
+          setReview({
+            ...review,
+            lastName: e.target.value,
+          })
+        }
+      />
+      <InputField
+        value={review?.userEmail}
+        label="Email"
+        error={error?.userEmail}
+        onChange={(e) =>
+          setReview({
+            ...review,
+            userEmail: e.target.value,
+          })
+        }
+      />
+
       <SelectField
         value={review?.country}
         name="country"

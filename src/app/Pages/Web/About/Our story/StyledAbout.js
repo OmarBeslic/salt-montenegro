@@ -13,12 +13,15 @@ export const StyledAbout = styled.div`
     width: 100%;
     min-height: 500px;
     padding-top: 120px;
-    background: linear-gradient(to bottom, var(--primary) 80%, #fff 20%);
+    background: linear-gradient(
+      to bottom,
+      var(--primary) 80%,
+      var(--backgroundMain) 20%
+    );
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    
 
     .overlay-about {
       box-shadow: rgba(1, 32, 54, 0.6) 0px 0px 0px 2000px inset;
@@ -30,6 +33,7 @@ export const StyledAbout = styled.div`
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      background-attachment: fixed;
     }
     & > * {
       color: var(--textMain);
@@ -82,5 +86,41 @@ export const StyledAbout = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+  @media (max-width: 1024px) {
+    .container {
+      .pictures-div {
+        .smaller {
+          width: 350px;
+          height: 250px;
+        }
+        .bigger {
+          width: 300px;
+          height: 200px;
+        }
+      }
+    }
+    p {
+      width: 90%;
+    }
+  }
+  @media (max-width: 576px) {
+    .container {
+      .pictures-div {
+        .smaller {
+          width: 300px;
+          height: 200px;
+        }
+        .bigger {
+          display: none;
+        }
+      }
+    }
+    p {
+      width: 90%;
+    }
+    .crew {
+      width: 100%;
+    }
   }
 `;

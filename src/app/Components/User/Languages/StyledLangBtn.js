@@ -31,7 +31,7 @@ export const StyledLangBtn = styled.div`
 
   ul {
     position: absolute;
-    background: #fff;
+    background: var(--backgroundMain);
     min-width: 200px;
     padding: 5px;
     border-radius: 10px;

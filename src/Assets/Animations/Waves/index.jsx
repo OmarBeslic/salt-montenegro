@@ -77,7 +77,7 @@ const StyledWaves = styled.div`
 
 function Waves() {
   return (
-    <StyledWaves>
+    <StyledWaves className="waves">
       <div className="wave"></div>
       <div className="wave"></div>
       <div className="wave"></div>

@@ -24,15 +24,13 @@ export const StyledTourSection = styled.div`
     bottom: 0;
   }
   .tours-header {
-    /* background: linear-gradient(0deg, transparent 0%, white 100%); */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* height: 100%; */
     z-index: 2;
     width: 100%;
-    padding: 100px 0 50px;
+    padding: 50px 0;
     h2 {
       margin: 0 0 20px 0;
       color: var(--textMain);
@@ -55,12 +53,11 @@ export const StyledTourSection = styled.div`
     gap: 60px;
   }
   .btn-div {
-    padding: 30px 0 100px;
+    padding: 30px 0 50px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(0deg, white 0%, transparent 100%); */
     z-index: 2;
 
     text-align: center;
@@ -79,7 +76,8 @@ export const StyledTourSection = styled.div`
     }
   }
   @media (max-width: 576px) {
-    .overlay-tour {
+    .tours-header {
+      padding: 50px 0 20px;
       .about-tours {
         width: 90% !important;
       }

@@ -9,7 +9,7 @@ export const StyledTour = styled.div`
   padding: 25px 20px;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
-  background: #fff;
+  background: var(--backgroundMain);
   z-index: 1;
   background-image: ${({ bgImg }) => `url(${bgImg})`};
   background-position: center;

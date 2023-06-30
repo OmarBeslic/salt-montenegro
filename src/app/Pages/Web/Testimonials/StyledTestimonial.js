@@ -10,10 +10,12 @@ export const StyledTestimonial = styled.div`
   background-image: url(${seabg});
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   box-shadow: rgba(1, 32, 54, 0.6) 0px 0px 0px 2000px inset;
+  padding-top: 100px;
   .review {
-    background-color: rgba(255,255,255,0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     width: 50%;
     min-height: 500px;
@@ -51,7 +53,6 @@ export const StyledTestimonial = styled.div`
       }
     }
     .right-review {
-      /* border: 1px solid red; */
       border-left: 1px solid var(--primary);
       padding: 0 10px;
 
@@ -64,20 +65,37 @@ export const StyledTestimonial = styled.div`
         .MuiTextField-root {
           width: 100% !important;
         }
-        .first-fields {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: start;
-          justify-content: space-between;
-          .inputs {
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            justify-content: space-between;
-            width: 70%;
-          }
+        button {
+          margin: unset;
         }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .review {
+      flex-direction: column;
+      width: 60%;
+      .left-review {
+        width: 100%;
+      }
+      .right-review {
+        width: 100%;
+        border: unset;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    height: unset;
+    padding: 110px 0 50px;
+    .review {
+      flex-direction: column;
+      width: 95%;
+      .left-review {
+        width: 100%;
+      }
+      .right-review {
+        width: 100%;
+        border: unset;
       }
     }
   }

@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { StyledBlogSection } from "./StyledBlogSection";
 import Blog from "./Blog";
-import HomeForm from "../SectionAbout/HomeForm";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryList } from "../../../../store/slices/layoutSlice";
 import useTranslate from "../../../../../Hooks/useTranslate";
-import PrimaryButton from "../../../../Components/Shared/Buttons/primaryButton";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
-import InputField from "../../../../../FormFields/InputField";
 import SendMesage from "./Blog/SendMessage";
+import { useNavigate } from "react-router-dom";
+import { getAllBlogs } from "../../../../store/slices/blogSlice";
+
 function BlogSection() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const p = useTranslate();
   const home = useSelector((state) => state.home?.homepage);
+  const blogs = useSelector((state) => state.blogs?.blogs);
 
   useEffect(() => {
     dispatch(getCountryList());
+    dispatch(getAllBlogs());
   }, []);
 
   return (
@@ -28,10 +31,16 @@ function BlogSection() {
             <p className="about-blogs">{p(home?.homeBlogText)}</p>
           </div>
           <div className="blogs-grid">
-            <Blog />
-            <Blog />
+            {blogs?.slice(0, 2).map((el,idx) => {
+              return <Blog blog={el} key={idx} />;
+            })}
           </div>
-          <SecondaryButton font="22px" hover={true} className="all-blogs-btn">
+          <SecondaryButton
+            font="22px"
+            hover={true}
+            onClick={() => navigate("/blog")}
+            className="all-blogs-btn"
+          >
             All Blogs
           </SecondaryButton>
         </div>

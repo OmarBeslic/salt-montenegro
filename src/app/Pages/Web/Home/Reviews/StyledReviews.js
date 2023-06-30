@@ -18,7 +18,7 @@ export const StyledReviews = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     .half-div {
       display: flex;
       align-items: center;
@@ -49,6 +49,17 @@ export const StyledReviews = styled.div`
     }
     .swiper {
       width: 95% !important;
+    }
+  }
+  @media (max-width: 576px) {
+    h2 {
+      text-align: center;
+    }
+    .half-div {
+      width: 100% !important;
+      .swiper {
+        width: 95% !important;
+      }
     }
   }
 `;

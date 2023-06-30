@@ -2,8 +2,11 @@ import React from "react";
 import { StyledAbout } from "./StyledAbout";
 import Sailor from "../Crew";
 import photo from "../../../../../Assets/images/rods.webp";
+import { useDispatch } from "react-redux";
+import { openModal } from "../../../../store/slices/layoutSlice";
 
 function OutStory() {
+  const dispatch = useDispatch();
   return (
     <StyledAbout>
       <div className="container">
@@ -13,8 +16,22 @@ function OutStory() {
           <h2>About us</h2>
         </div>
         <div className="pictures-div">
-          <img src={photo} alt="" className="smaller" />
-          <img src={photo} alt="" className="bigger" />
+          <img
+            src={photo}
+            alt=""
+            className="smaller"
+            onClick={() =>
+              dispatch(openModal({ name: "image", isOpen: true, data: photo }))
+            }
+          />
+          <img
+            src={photo}
+            alt=""
+            className="bigger"
+            onClick={() =>
+              dispatch(openModal({ name: "image", isOpen: true, data: photo }))
+            }
+          />
         </div>
       </div>
       <p>

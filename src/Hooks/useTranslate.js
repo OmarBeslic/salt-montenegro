@@ -9,6 +9,5 @@ export default function useTranslate() {
     let translation = translations?.find((el) => el?.slug === key);
     return translation?.[lang] || key;
   };
-
   return translate;
 }

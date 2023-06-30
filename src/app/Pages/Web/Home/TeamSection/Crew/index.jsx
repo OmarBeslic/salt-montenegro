@@ -11,7 +11,7 @@ const StyledSailor = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px 40px;
-  background: #fff;
+  background: var(--backgroundMain);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   border-radius: 10px;
   color: var(--primary);

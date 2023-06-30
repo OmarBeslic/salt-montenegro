@@ -3,14 +3,13 @@ import homeService from "../services/homeService";
 
 const initialState = {
   homeForm: null,
-  homepage:null,
-  loading:false,
-  error:null
-
+  homepage: null,
+  loading: false,
+  error: null,
 };
 export const getHomepage = createAsyncThunk("single/home", async (id) => {
   const res = await homeService.getHomepage();
-  return res.data?.data?.attributes
+  return res.data?.data?.attributes;
 });
 export const homeSlice = createSlice({
   name: "layout",
@@ -32,28 +31,28 @@ export const homeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getHomepage.pending, (state,action) => {
-       return{
-        ...state,
-        loading:true
-       }
+      .addCase(getHomepage.pending, (state, action) => {
+        return {
+          ...state,
+          loading: true,
+        };
       })
       .addCase(getHomepage.fulfilled, (state, action) => {
-        return{
+        return {
           ...state,
-          homepage:{
+          homepage: {
             ...action.payload,
-            homeHeaderBackground: action.payload?.homeHeaderBackground?.data?.attributes?.url
+            homeHeaderBackground: `http://localhost:1337${action.payload?.homeHeaderBackground?.data?.attributes?.url}`,
           },
-          loading:false
-         }
+          loading: false,
+        };
       })
       .addCase(getHomepage.rejected, (state, action) => {
-        return{
+        return {
           ...state,
-          error:action.payload,
-          loading:false
-         }
+          error: action.payload,
+          loading: false,
+        };
       });
   },
 });

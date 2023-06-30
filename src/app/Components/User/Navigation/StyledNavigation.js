@@ -35,7 +35,7 @@ export const StyledDesktopNav = styled.div`
     width: auto;
     height: 100%;
     width: 100%;
-    background: ${(props) => (props.scrolled ? "#ffffff" : "unset")};
+    background: ${(props) => (props.scrolled ? "var(--backgroundMain)" : "unset")};
     transition: all 0.3s ease-in-out;
     .contact-info {
       height: 25%;
@@ -137,7 +137,7 @@ export const StyledMobileNav = styled.div`
         .bar3 {
           width: 35px;
           height: 3px;
-          background-color: #fff;
+          background-color: var(--backgroundMain);
           margin: 6px 0;
           transition: 0.4s;
         }

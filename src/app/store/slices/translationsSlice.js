@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import blogService from "../services/blogService";
 import translationsService from "../services/translationsService";
 
 const initialState = {
@@ -7,19 +6,28 @@ const initialState = {
   loading: false,
   error: null,
 };
+
 export const getAllTranslations = createAsyncThunk("translations", async () => {
-  const res = await translationsService.getTranslations();
-  let formattedTranslations = [];
-  res?.data?.data?.map((el) => {
-    return formattedTranslations.push({
-      slug: el?.attributes?.slug,
-      en: el?.attributes?.en,
-      me: el?.attributes?.me,
-      ru: el?.attributes?.ru,
-    });
-  });
+  const res = await translationsService.getTranslations(null, true);
+  const pageCount = res?.data?.meta?.pagination?.pageCount;
+
+  const fetchPromises = Array.from({ length: pageCount }, (_, i) =>
+    translationsService.getTranslations(i + 1, false)
+  );
+
+  const responses = await Promise.all(fetchPromises);
+  const allTranslations = responses.flatMap((el) => el?.data?.data || []);
+
+  const formattedTranslations = allTranslations.map((el) => ({
+    slug: el?.attributes?.slug,
+    en: el?.attributes?.en,
+    me: el?.attributes?.me,
+    ru: el?.attributes?.ru,
+  }));
+
   return formattedTranslations;
 });
+
 export const translationSlice = createSlice({
   name: "translations",
   initialState,
@@ -49,6 +57,5 @@ export const translationSlice = createSlice({
   },
 });
 
-export const {} = translationSlice.actions;
 
 export default translationSlice.reducer;

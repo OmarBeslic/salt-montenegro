@@ -40,16 +40,18 @@ export const StyledHeader = styled.div`
       justify-content: start;
     }
     .bg-video {
-    
-    height: 60vh;
-    
-  }
-}
-@media (max-width: 576px) {
-    .bg-video{
-      height: 100vh;
+      height: 80vh;
     }
     .overlay {
+      align-items: center;
+    }
+  }
+  @media (max-width: 576px) {
+    .bg-video {
+      height: 115vh;
+    }
+    .overlay {
+      align-items: center;
     }
   }
 `;

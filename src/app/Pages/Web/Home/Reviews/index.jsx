@@ -1,27 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+//
+import { useDispatch, useSelector } from "react-redux";
+//
+import useTranslate from "../../../../../Hooks/useTranslate";
+import { getAllReviews } from "../../../../store/slices/reviewsSlice";
+//
 import { StyledReviews } from "./StyledReviews";
+import Review from "./Review";
+//
+import SwiperCore, { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
-import Review from "./Review";
-import { useDispatch, useSelector } from "react-redux";
-import useTranslate from "../../../../../Hooks/useTranslate";
-import { useEffect } from "react";
-import { getAllReviews } from "../../../../store/slices/reviewsSlice";
 
 function Reviews() {
-  SwiperCore.use([Pagination, Autoplay]);
+  SwiperCore.use([Autoplay]);
   const dispatch = useDispatch();
   const notDesktop = useSelector((state) => state.layout?.device) !== "desktop";
   const p = useTranslate();
@@ -31,6 +28,7 @@ function Reviews() {
   useEffect(() => {
     dispatch(getAllReviews());
   }, []);
+
   return (
     <StyledReviews notDesktop={notDesktop}>
       <div className="overlay-div">
@@ -38,7 +36,7 @@ function Reviews() {
           <span className="cursive-span">{p(home?.homeReviewSubtitle)}</span>
           <h2>{p(home?.homeReviewTitle)}</h2>
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation, Scrollbar, A11y]}
             spaceBetween={1}
             slidesPerView={1}
             autoplay={{
@@ -48,9 +46,9 @@ function Reviews() {
             loop={true}
             pagination={{ clickable: true }}
           >
-            {reviews?.map((el) => {
+            {reviews?.map((el, idx) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={idx}>
                   <Review review={el} />
                 </SwiperSlide>
               );

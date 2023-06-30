@@ -6,9 +6,6 @@ function Review({ review }) {
   return (
     <StyledReview>
       <div className="mask">
-        <div className="img-backg">
-          <img src={review?.userPhoto ? review?.userPhoto : user} alt="" />
-        </div>
         <div className="name-review">
           <div className="person">
             <h3 className="name">{`${review?.name} ${review?.lastName}`}</h3>
