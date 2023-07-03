@@ -1,7 +1,8 @@
-import axios from "axios";
+import instance from "../api_config";
+
 
 const getAllBlogs = () => {
-  return axios.get("http://localhost:1337/api/blogs?populate=*");
+  return instance.get(`/blogs?populate=*`);
 };
 
 const blogService = {

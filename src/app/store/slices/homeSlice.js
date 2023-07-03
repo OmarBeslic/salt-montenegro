@@ -36,7 +36,7 @@ export const getCrew = createAsyncThunk("crew/all", async () => {
     sailorFb: el?.attributes?.sailorFb,
     sailorInsta: el?.attributes?.sailorInsta,
     sailorWA: el?.attributes?.sailorWA,
-    sailorPhoto: `http://localhost:1337${el?.attributes?.sailorPhoto?.data?.attributes?.url}`,
+    sailorPhoto: `https://salt-mne-be-s8vht.ondigitalocean.app${el?.attributes?.sailorPhoto?.data?.attributes?.url}`,
   }));
   return sailor;
 });
@@ -75,7 +75,7 @@ export const homeSlice = createSlice({
           ...state,
           homepage: {
             ...action.payload,
-            homeHeaderBackground: `http://localhost:1337${action.payload?.homeHeaderBackground?.data?.attributes?.url}`,
+            homeHeaderBackground: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homeHeaderBackground?.data?.attributes?.url}`,
           },
           loading: false,
         };
@@ -98,8 +98,8 @@ export const homeSlice = createSlice({
           ...state,
           aboutUs: {
             ...action.payload,
-            smallerPhoto: `http://localhost:1337${action.payload?.smallerPhoto?.data?.attributes?.url}`,
-            biggerPhoto: `http://localhost:1337${action.payload?.biggerPhoto?.data?.attributes?.url}`,
+            smallerPhoto: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.smallerPhoto?.data?.attributes?.url}`,
+            biggerPhoto: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.biggerPhoto?.data?.attributes?.url}`,
           },
           loading: false,
         };

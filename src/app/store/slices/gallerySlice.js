@@ -11,7 +11,7 @@ export const getAllPhotos = createAsyncThunk("all/photos", async () => {
   const res = await galleryService.getGallery();
   const photosAll = res?.data?.data?.map((img) => ({
     id: img?.id,
-    photo: `http://localhost:1337${img?.attributes?.photo?.data?.attributes?.url}`,
+    photo: `https://salt-mne-be-s8vht.ondigitalocean.app${img?.attributes?.photo?.data?.attributes?.url}`,
   }));
   return photosAll;
 });

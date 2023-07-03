@@ -18,9 +18,9 @@ export const getAllBlogs = createAsyncThunk("all/blogs", async (id) => {
     blogContentTwo: blog?.attributes?.blogContentTwo,
     blogContentThree: blog?.attributes?.blogContentThree,
     blogTitleSlug: blog?.attributes?.blogTitleSlug,
-    mainPicture: `http://localhost:1337${blog?.attributes?.mainPicture?.data?.attributes?.url}`,
-    blogPicTwo: `http://localhost:1337${blog?.attributes?.blogPicTwo?.data?.attributes?.url}`,
-    blogPicOne: `http://localhost:1337${blog?.attributes?.blogPicOne?.data?.attributes?.url}`,
+    mainPicture: `https://salt-mne-be-s8vht.ondigitalocean.app${blog?.attributes?.mainPicture?.data?.attributes?.url}`,
+    blogPicTwo: `https://salt-mne-be-s8vht.ondigitalocean.app${blog?.attributes?.blogPicTwo?.data?.attributes?.url}`,
+    blogPicOne: `https://salt-mne-be-s8vht.ondigitalocean.app${blog?.attributes?.blogPicOne?.data?.attributes?.url}`,
   }));
   return blogsAll;
 });

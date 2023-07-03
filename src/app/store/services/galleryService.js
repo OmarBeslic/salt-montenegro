@@ -1,7 +1,7 @@
-import axios from "axios";
+import instance from "../api_config";
 
 const getGallery = () => {
-  return axios.get(`http://localhost:1337/api/galleries?populate=*`);
+  return instance.get(`/galleries?populate=*`);
 };
 
 const galleryService = {

@@ -1,18 +1,18 @@
-import axios from "axios";
+import instance from "../api_config";
 
 const getHomepage = () => {
-  return axios.get("http://localhost:1337/api/homepage?populate=*");
+  return instance.get("/homepage?populate=*");
 };
 const getAboutUs = () => {
-  return axios.get("http://localhost:1337/api/about-us?populate=*");
+  return instance.get("/about-us?populate=*");
 };
 const sendBooking = (data) => {
-  return axios.post("http://localhost:1337/api/bookings", {
+  return instance.post("/bookings", {
     data,
   });
 };
 const getCrew = () => {
-  return axios.get("http://localhost:1337/api/crews?populate=*");
+  return instance.get("/crews?populate=*");
 };
 const homeService = {
   getHomepage,

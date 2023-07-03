@@ -1,10 +1,10 @@
-import axios from "axios";
+import instance from "../api_config";
 
 const getAllReviews = () => {
-  return axios.get("http://localhost:1337/api/reviews");
+  return instance.get("/reviews");
 };
 const postReview = (data) => {
-  return axios.post("http://localhost:1337/api/reviews", {
+  return instance.post("/reviews", {
     data,
   });
 };

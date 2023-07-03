@@ -1,11 +1,11 @@
-import axios from "axios";
+import instance from "../api_config";
 
 const getTranslations = (page, pagination = false) => {
   const url = pagination
-    ? `http://localhost:1337/api/translations?populate=*`
-    : `http://localhost:1337/api/translations?pagination[page]=${page}`;
+    ? `/translations?populate=*`
+    : `/translations?pagination[page]=${page}`;
 
-  return axios.get(url);
+  return instance.get(url);
 };
 
 const translationsService = {

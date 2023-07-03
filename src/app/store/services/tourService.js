@@ -1,7 +1,7 @@
-import axios from "axios";
+import instance from "../api_config";
 
 const getAllTours = () => {
-  return axios.get("http://localhost:1337/api/tours?populate=*");
+  return instance.get("/tours?populate=*");
 };
 
 const toursService = {
