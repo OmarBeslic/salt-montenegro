@@ -3,8 +3,7 @@ import InputField from "../../../../../../../FormFields/InputField";
 import SecondaryButton from "../../../../../../Components/Shared/Buttons/secondarybutton";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { showToast } from "../../../../../../../FormFields/helpers";
 
 function SendMesage() {
@@ -29,10 +28,8 @@ function SendMesage() {
         form,
         "E9e-FbtJcilYbz3l0"
       );
-      console.log(result.text);
       showToast("success", "Thank you, your review has been submitted.");
     } catch (error) {
-      console.log(error.text);
       showToast("error", "Failed to send message. Please try again later.");
     }
 

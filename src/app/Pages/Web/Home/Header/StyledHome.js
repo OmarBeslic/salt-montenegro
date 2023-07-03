@@ -14,13 +14,14 @@ export const StyledHeader = styled.div`
     background-color: rgba(49, 112, 142, 0.025);
     display: flex;
     align-items: end;
-    justify-content: center;
+    justify-content: start;
     .home-content {
       display: flex;
       align-items: center;
       justify-content: start;
       height: 84%;
-      width: 100%;
+      width: 30%;
+      margin-left: 150px;
       justify-content: start;
     }
   }

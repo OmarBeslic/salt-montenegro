@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import toursService from "../services/tourService";
 import reviewsService from "../services/reviewsService";
 
 const initialState = {
@@ -32,14 +31,15 @@ export const reviewsSlice = createSlice({
       })
       .addCase(getAllReviews.fulfilled, (state, action) => {
         let review = action?.payload?.data?.map((el) => {
-          const { name, lastName, country, countryFlag, review } =
+          const { name, lastName, country, countryFlag, review,rating } =
             el?.attributes;
           return {
-            name: name,
-            lastName: lastName,
-            country: country,
-            countryFlag: countryFlag,
+            name,
+            lastName,
+            country,
+            countryFlag,
             review,
+            rating,
           };
         });
         return {
@@ -58,6 +58,5 @@ export const reviewsSlice = createSlice({
   },
 });
 
-export const {} = reviewsSlice.actions;
 
 export default reviewsSlice.reducer;

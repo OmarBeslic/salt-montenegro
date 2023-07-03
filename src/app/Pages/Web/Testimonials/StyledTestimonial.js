@@ -69,6 +69,21 @@ export const StyledTestimonial = styled.div`
           margin: unset;
         }
       }
+      .rating {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin: 5px 0 10px;
+        border: 1px solid red;
+        padding: 10px ;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.42);
+        p{
+          margin-right: 10px;
+          color: #637381;
+        }
+      }
     }
   }
   @media (max-width: 1024px) {

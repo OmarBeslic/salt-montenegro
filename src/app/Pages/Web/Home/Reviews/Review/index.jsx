@@ -2,6 +2,7 @@ import React from "react";
 import { StyledReview } from "./StyledReview";
 import user from "../../../../../../Assets/images/user.webp";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import StarRating from "./starRating";
 function Review({ review }) {
   return (
     <StyledReview>
@@ -14,6 +15,7 @@ function Review({ review }) {
               <span>{review?.country}</span>
             </div>
           </div>
+          <StarRating numStars={review?.rating} />
           <p className="review">
             <FormatQuoteIcon className="upper-quote" />
             {review?.review}

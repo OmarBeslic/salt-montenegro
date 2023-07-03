@@ -16,7 +16,7 @@ function AllTours() {
       dispatch(cleanUpTours("tours"));
     };
   }, []);
-  console.log(tours, "tours");
+
   return (
     <StyledTours>
       <div className="tours-header">

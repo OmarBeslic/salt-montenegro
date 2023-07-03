@@ -28,7 +28,6 @@ function TourSection() {
     };
   }, []);
 
-  console.log(tours, "tours");
   return (
     <StyledTourSection notDesktop={notDesktop}>
       <div className="overlay-tour"></div>

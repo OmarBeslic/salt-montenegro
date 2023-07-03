@@ -6,6 +6,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
+import useTranslate from "../../../../../Hooks/useTranslate";
 const StyledSailor = styled.div`
   display: flex;
   align-items: center;
@@ -70,7 +71,6 @@ const StyledSailor = styled.div`
       align-items: center;
       justify-content: end;
       text-align: left;
-      /* width: 30%; */
       a {
         text-decoration: none;
         color: var(--primary);
@@ -115,7 +115,7 @@ const StyledSailor = styled.div`
     }
   }
   @media (max-width: 576px) {
-    padding:unset;
+    padding: unset;
     flex-direction: column !important;
     width: 95%;
     .img-backg {
@@ -143,36 +143,27 @@ const StyledSailor = styled.div`
   }
 `;
 
-function Sailor() {
+function Sailor({ sailor }) {
+  const p = useTranslate();
   return (
     <StyledSailor>
       <div className="img-backg">
-        <img src={crew} alt="" />
+        <img src={sailor?.sailorPhoto} alt="Sailor" />
       </div>
       <div className="about-sailor">
         <div className="name-more">
-          <h2>John Doe</h2>
+          <h2>{sailor?.name}</h2>
         </div>
-        <p>
-          We have a very high candidate success rate as well as a reputation for
-          producing well trained Dive Instructors. The program is a mixture
-          of... We have a very high candidate success rate as well as a
-          reputation for producing well trained Dive Instructors. The program is
-          a mixture of... We have a very high candidate success rate as well as
-          a reputation for producing well trained Dive Instructors. The program
-          is a mixture of... We have a very high candidate success rate as well
-          as a reputation for producing well trained Dive Instructors. The
-          program is a mixture of...
-        </p>
+        <p>{p(sailor?.aboutSailor)} </p>
         <div className="socials">
-          <Link to="https://wa.me/69627028" target="_blank">
-            <FacebookIcon />
+          <Link to={`https://wa.me/${sailor?.sailorWA}`} target="_blank">
+            <WhatsAppIcon />
           </Link>
-          <Link to="https://wa.me/69627028" target="_blank">
+          <Link to={sailor?.sailorInsta} target="_blank">
             <InstagramIcon />
           </Link>
-          <Link to="https://wa.me/69627028" target="_blank">
-            <WhatsAppIcon />
+          <Link to={sailor?.sailorFb} target="_blank">
+            <FacebookIcon />
           </Link>
         </div>
       </div>

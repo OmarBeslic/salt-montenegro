@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLoadingScreen = styled.div`
-  background: var(--background1);
+  background: rgba(1, 32, 54, 0.6);
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -14,17 +14,17 @@ export const StyledLoadingScreen = styled.div`
     transform: translate(-50%, -50%);
     width: 150px;
     height: 150px;
-    background: #ccc;
-    border: 5px solid #4973ff;
+    background: rgba(1, 32, 54, 0.6);
+    border: 5px solid var(--primary);
     border-radius: 50%;
     overflow: hidden;
     .wave {
       position: relative;
       width: 100%;
       height: 100%;
-      background: #4973ff;
+      background: var(--primary);
       border-radius: 50%;
-      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
       &:before,
       &:after {
         content: "";
@@ -37,7 +37,7 @@ export const StyledLoadingScreen = styled.div`
       }
       &:before {
         border-radius: 45%;
-        background: rgba(255, 255, 255, 1);
+        background: rgba(0, 0, 0, 0.1);
         animation: animate 5s linear infinite;
       }
       &:after {

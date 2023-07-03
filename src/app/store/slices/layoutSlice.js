@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { MobileOnlyView, TabletView } from "react-device-detect";
 import layoutService from "../services/layoutService";
 
 const initialState = {

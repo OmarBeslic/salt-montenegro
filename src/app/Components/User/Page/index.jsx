@@ -13,5 +13,3 @@ const Page = forwardRef(({ children, title = "", meta, ...other }, ref) => (
 
 export default Page;
 
-// Usage
-

@@ -16,7 +16,6 @@ function Footer() {
     { route: "/blog", item: t("nav.blog") },
     { route: "/testimonials", item: t("nav.testimonials") },
     { route: "/tours", item: t("nav.tours") },
-    { route: "/booking", item: t("nav.booking") },
     { route: "/gallery", item: t("nav.gallery") },
   ];
   return (

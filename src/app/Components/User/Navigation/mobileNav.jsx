@@ -18,6 +18,7 @@ function MobileNav({ scrolled }) {
     { route: "/gallery", item: t("nav.gallery") },
     { route: "/about-us", item: t("nav.about") },
     { route: "/testimonials", item: t("nav.testimonials") },
+
     
   ];
   return (

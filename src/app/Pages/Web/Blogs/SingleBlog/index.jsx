@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 //
+import { useDispatch, useSelector } from "react-redux";
 import {
   cleanUpBlogs,
   getSingleBlog,
 } from "../../../../store/slices/blogSlice";
 //
 import { StyledSingleBlog } from "./StyledSingleBlog";
-import Waves from "../../../../../Assets/Animations/Waves";
 import useTranslate from "../../../../../Hooks/useTranslate";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 
@@ -29,10 +28,6 @@ function SingleBlog() {
 
   return (
     <StyledSingleBlog>
-      <div className="blog-header">
-        <div className="blog-title">Blog</div>
-        <Waves />
-      </div>
       <div className="blog-container">
         <div className="blog-value">
           <h2>{p(singleBlog?.blogTitleSlug)}</h2>

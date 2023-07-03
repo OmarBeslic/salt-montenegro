@@ -6,22 +6,20 @@ export const StyledHomeForm = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-left: 60px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   .container {
     display: flex;
     padding: 20px 0 0;
     min-width: 870px;
-
+    height: 20vh;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    h1 {
-      text-align: center;
-      font-size: 55px;
-      width: 50%;
-      line-height: 1.125;
+    h2 {
+      color: var(--textMain);
     }
     .home-form {
       border-left: 1px solid var(--primary);
@@ -99,5 +97,3 @@ export const StyledHomeForm = styled.div`
     }
   }
 `;
-// @media (max-width: 1024px) {
-// }

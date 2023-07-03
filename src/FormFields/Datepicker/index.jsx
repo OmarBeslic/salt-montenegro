@@ -1,20 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+//
 import dayjs from "dayjs";
-// import { StyledDatePicker } from "./StyledDatePicker";
+
 import {
   LocalizationProvider,
   DatePicker as DateInput,
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { useDispatch } from "react-redux";
+//
 import { populateHomeForm } from "../../app/store/slices/homeSlice";
 
-function DatePicker({ name, label }) {
+function DatePicker({ name, label, cb }) {
   const dispatch = useDispatch();
   const [value, setValue] = useState(dayjs());
   const handleChange = (e) => {
     setValue(e);
     dispatch(populateHomeForm({ name, value: e }));
+    cb(e);
   };
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -23,7 +26,7 @@ function DatePicker({ name, label }) {
         value={value}
         format="DD-MM-YYYY"
         sx={{
-          width: "100%",
+          width: "90%",
           margin: "15px !important",
           ".MuiInputBase-root": {
             justifyContent: "space-between",

@@ -57,4 +57,15 @@ export const StyledTours = styled.div`
       row-gap: 20px;
     }
   }
+  @media (max-width: 1024px) {
+    .tours-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 576px) {
+    .tours-grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+    
 `;

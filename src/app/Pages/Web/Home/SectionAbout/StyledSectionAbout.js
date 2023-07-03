@@ -35,7 +35,6 @@ export const StyledSectionAbout = styled.div`
         justify-content: start;
 
         .photo-left {
-          /* width: 50%; */
           height: 100%;
           display: flex;
           align-items: end;
@@ -49,7 +48,6 @@ export const StyledSectionAbout = styled.div`
         }
         .photo-right {
           margin: 0 20px 0 0;
-          /* width: 50%; */
           height: 100%;
           display: flex;
           align-items: center;
@@ -86,7 +84,6 @@ export const StyledSectionAbout = styled.div`
           width: 100%;
         }
         p {
-          /* width: 80%; */
           text-align: center;
         }
       }
@@ -108,7 +105,6 @@ export const StyledSectionAbout = styled.div`
             width: 100% !important;
             img {
               padding: 10px;
-              /* height: 150px !important; */
             }
           }
         }

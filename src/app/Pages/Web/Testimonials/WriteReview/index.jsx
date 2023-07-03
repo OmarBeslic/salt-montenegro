@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import File from "../../../../../FormFields/FileField";
-import InputField from "../../../../../FormFields/InputField";
+import React, { useState, useEffect } from "react";
+//
 import { useDispatch, useSelector } from "react-redux";
-import SelectField from "../../../../../FormFields/Select";
-import { useEffect } from "react";
 import { getCountryList } from "../../../../store/slices/layoutSlice";
-import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 import { postReview } from "../../../../store/slices/reviewsSlice";
+//
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { showToast } from "../../../../../FormFields/helpers";
+import "react-toastify/dist/ReactToastify.css";
+//
+import InputField from "../../../../../FormFields/InputField";
+import SelectField from "../../../../../FormFields/Select";
+import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
+import StarRating from "../../../../Components/Shared/StarRating";
+import PrimaryButton from "../../../../Components/Shared/Buttons/primaryButton";
+
 function WriteReview() {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state?.layout?.countries);
@@ -21,12 +25,18 @@ function WriteReview() {
     review: "",
     userEmail: "",
     countryFlag: "",
+    rating: "",
   });
 
   useEffect(() => {
     dispatch(getCountryList());
   }, []);
-
+  const getStars = (index) => {
+    setReview({
+      ...review,
+      rating: index,
+    });
+  };
   const validateComponent = ({ key, val }) => {
     if (!val) {
       showToast("error", "This field is required. Please enter a value.");
@@ -56,6 +66,7 @@ function WriteReview() {
           review: "",
           userEmail: "",
           countryFlag: "",
+          rating: "",
         });
       });
     }
@@ -64,9 +75,12 @@ function WriteReview() {
   return (
     <div className="review-form">
       <ToastContainer />
-
+      <div className="rating">
+        <p>Rating</p>
+        <StarRating getStars={(e) => getStars(e)} />
+      </div>
       <InputField
-        label="Name"
+        label="Name*"
         value={review?.name}
         onChange={(e) =>
           setReview({
@@ -77,7 +91,7 @@ function WriteReview() {
       />
       <InputField
         value={review?.lastName}
-        label="Last name"
+        label="Last name*"
         onChange={(e) =>
           setReview({
             ...review,
@@ -87,7 +101,7 @@ function WriteReview() {
       />
       <InputField
         value={review?.userEmail}
-        label="Email"
+        label="Email*"
         onChange={(e) =>
           setReview({
             ...review,
@@ -99,7 +113,7 @@ function WriteReview() {
       <SelectField
         value={review?.country}
         name="country"
-        label="Your country"
+        label="Your country*"
         options={countries}
         onChange={(e) =>
           setReview({
@@ -111,9 +125,10 @@ function WriteReview() {
           })
         }
       />
+
       <InputField
         value={review?.review}
-        label="Review"
+        label="Review*"
         multiline
         rows={4}
         onChange={(e) =>
@@ -123,9 +138,9 @@ function WriteReview() {
           })
         }
       />
-      <SecondaryButton onClick={() => handleSendReview()}>
+      <PrimaryButton onClick={() => handleSendReview()}>
         Send review
-      </SecondaryButton>
+      </PrimaryButton>
     </div>
   );
 }

@@ -5,7 +5,6 @@ export const StyledBlogSection = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  /* border: 2px solid red; */
   background: linear-gradient(
     to bottom,
     var(--backgroundMain) 85%,
@@ -84,7 +83,6 @@ export const StyledBlogSection = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        /* margin-bottom: 100px; */
       }
       .contact-form {
         width: 95%;

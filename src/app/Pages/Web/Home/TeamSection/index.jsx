@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyledTeamSection } from "./StyledTeamSection";
 import IconButton from "../../../../Components/Shared/Buttons/iconButton";
 import Sailor from "./Crew";
 import useTranslate from "../../../../../Hooks/useTranslate";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCrew } from "../../../../store/slices/homeSlice";
 function TeamSection() {
-  // odraditi fetch posade i mapirati sailora
+  const dispatch = useDispatch();
   const p = useTranslate();
   const home = useSelector((state) => state.home?.homepage);
+  const crew = useSelector((state) => state.home?.crew);
+
+  useEffect(() => {
+    dispatch(getCrew());
+  }, []);
+
   return (
     <StyledTeamSection>
       <div className="meet-team">
@@ -15,8 +22,9 @@ function TeamSection() {
         <h2>{p(home?.homeCrewTitle)}</h2>
       </div>
       <div className="boat-crew">
-        <Sailor />
-        <Sailor />
+        {crew?.map((el) => {
+          return <Sailor sailor={el} />;
+        })}
       </div>
     </StyledTeamSection>
   );

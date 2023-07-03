@@ -3,29 +3,30 @@ import { useTranslation } from "react-i18next";
 //
 import { StyledLangBtn } from "./StyledLangBtn";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-
+import { useSelector } from "react-redux";
 
 const LANGS = [
   {
     value: "me",
     label: "lang.montenegrian",
-    icon: 'https://flagcdn.com/me.svg',
+    icon: "https://flagcdn.com/me.svg",
   },
   {
     value: "en",
     label: "lang.english",
-    icon: 'https://flagcdn.com/gb.svg',
+    icon: "https://flagcdn.com/gb.svg",
   },
   {
     value: "ru",
     label: "lang.russian",
-    icon: 'https://flagcdn.com/ru.svg',
+    icon: "https://flagcdn.com/ru.svg",
   },
 ];
 
-export default function LangBtn({scrolled}) {
+export default function LangBtn({ scrolled }) {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  const device = useSelector(state=>state?.layout?.device)
   const activeLang =
     LANGS[i18n.language === "en" ? 1 : i18n.language === "me" ? 0 : 2];
 
@@ -39,12 +40,11 @@ export default function LangBtn({scrolled}) {
       className={`language-btn ${open ? "active" : ""}`}
       onClick={() => setOpen(!open)}
       scrolled={scrolled}
+      device={device}
     >
-      <span>
-        <img src={activeLang?.icon} alt={LANGS[0].label} />
-        <ArrowDropDownIcon />
+      <img src={activeLang?.icon} alt={LANGS[0].label} />
+      <ArrowDropDownIcon />
 
-      </span>
       <ul>
         {LANGS?.map((lang, idx) => {
           return (
@@ -61,6 +61,4 @@ export default function LangBtn({scrolled}) {
       </ul>
     </StyledLangBtn>
   );
-  
 }
-

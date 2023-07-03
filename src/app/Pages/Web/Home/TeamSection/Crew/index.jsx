@@ -34,7 +34,6 @@ const StyledSailor = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      /* width: 30%; */
       a {
         text-decoration: none;
         color: var(--primary);
@@ -94,25 +93,25 @@ const StyledSailor = styled.div`
   }
 `;
 
-function Sailor() {
+function Sailor({ sailor }) {
   return (
     <StyledSailor>
       <div className="about-sailor">
         <div className="name-more">
-          <h2>John Doe</h2> 
+          <h2>{sailor?.name}</h2>
         </div>
         <div className="img-backg">
-          <img src={crew} alt="" />
+          <img src={sailor?.sailorPhoto} alt="Sailor" />
         </div>
         <div className="socials">
-          <Link to="https://wa.me/69627028" target="_blank">
-            <FacebookIcon />
+          <Link to={`https://wa.me/${sailor?.sailorWA}`} target="_blank">
+            <WhatsAppIcon />
           </Link>
-          <Link to="https://wa.me/69627028" target="_blank">
+          <Link to={sailor?.sailorInsta} target="_blank">
             <InstagramIcon />
           </Link>
-          <Link to="https://wa.me/69627028" target="_blank">
-            <WhatsAppIcon />
+          <Link to={sailor?.sailorFb} target="_blank">
+            <FacebookIcon />
           </Link>
         </div>
       </div>

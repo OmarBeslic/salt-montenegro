@@ -87,6 +87,25 @@ export const StyledAbout = styled.div`
     justify-content: center;
     flex-direction: column;
   }
+  .location{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    h2{
+      margin: 10px 0 20px;
+    }
+    .gooMap{
+      width: 100%;
+      border: 0;
+      height: 450px;
+    }
+    p{
+      width: unset;
+      margin: 10px 0 30px;
+    }
+  }
   @media (max-width: 1024px) {
     .container {
       .pictures-div {
@@ -102,6 +121,9 @@ export const StyledAbout = styled.div`
     }
     p {
       width: 90%;
+    }
+    .location{
+      width: 92%;
     }
   }
   @media (max-width: 576px) {

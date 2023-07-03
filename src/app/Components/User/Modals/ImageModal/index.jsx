@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 //
-import { openModal } from "../../../store/slices/layoutSlice";
 //
 import { StyledImageModal } from "./StyledImageModal";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { openModal } from "../../../../store/slices/layoutSlice";
 
 function ImageModal() {
   const dispatch = useDispatch();

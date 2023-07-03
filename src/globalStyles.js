@@ -26,9 +26,7 @@ const GlobalStyle = createGlobalStyle`
     h1{
         font-size: 66px;
     }
-    /* h2{
-        font-size: 46px;
-    } */
+   
     h3{
         font-size: 24px;
     }

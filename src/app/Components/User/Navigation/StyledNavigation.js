@@ -22,7 +22,7 @@ export const StyledDesktopNav = styled.div`
     display: flex;
     align-items: center;
     background-color: ${(props) => (props.scrolled ? "var(--primary)" : "")};
-
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
     img {
       margin: 60px;
@@ -53,6 +53,11 @@ export const StyledDesktopNav = styled.div`
       span {
         color: ${(props) =>
           props.scrolled ? "var(--primary)" : "var(--textMain)"};
+        a {
+          font-size: 15px;
+          text-decoration: underline;
+          margin-left: 5px;
+        }
       }
       span:first-child {
         margin-left: 10px;
@@ -74,7 +79,6 @@ export const StyledDesktopNav = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* width: 50%; */
       .nav-links {
         display: flex;
         align-items: center;
@@ -94,7 +98,6 @@ export const StyledDesktopNav = styled.div`
       font-size: 18px;
       transition: all 0.2s ease-in-out;
       &:hover {
-        /* color: var(--primary); */
         transition: all 0.2s ease-in-out;
       }
     }
@@ -109,7 +112,7 @@ export const StyledMobileNav = styled.div`
   align-items: center;
   justify-content: center;
   top: 0;
-  z-index: 2;
+  z-index: 33;
   .main-nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     width: 100%;

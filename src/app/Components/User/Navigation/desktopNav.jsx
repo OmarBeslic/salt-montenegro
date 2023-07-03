@@ -2,14 +2,14 @@ import React from "react";
 import { StyledDesktopNav } from "./StyledNavigation";
 import logo from "../../../../Assets/images/logo2.png";
 import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LangBtn from "../Languages";
 import { useTranslation } from "react-i18next";
 import { Typography } from "@mui/material";
 
 function DesktopNav({ scrolled }) {
   const { t } = useTranslation();
-
+  const navigate = useNavigate();
   const links = [
     { route: "/home", item: t("nav.home") },
     { route: "/tours", item: t("nav.tours") },
@@ -20,13 +20,18 @@ function DesktopNav({ scrolled }) {
   return (
     <StyledDesktopNav scrolled={scrolled}>
       <div className="logo">
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo" onClick={() => navigate("/home")} />
       </div>
 
       <div className="links-wrapper">
         <div className="contact-info">
           <div className="hours">
-            <span>Mon – Sun: 9.00 am – 8.00pm</span>
+            <span>
+              Find us on
+              <a href="https://www.tripadvisor.com/Attraction_Review-g608961-d26241397-Reviews-Private_Fishing_boat_tour-Bar_Bar_Municipality.html" target="_blank">
+                TripAdvisor
+              </a>
+            </span>
           </div>
           <div className="mail">
             <span className="phone">+382 69 789 465</span>

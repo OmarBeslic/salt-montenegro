@@ -10,13 +10,10 @@ import boat from "../../../../../Assets/images/boat.webp";
 import { openModal } from "../../../../store/slices/layoutSlice";
 
 function SectionAbout() {
-  // Fetch all tours
-  // Save tour, date and number of peoples in redux
-  // on button click go to tours page with that filters selected
-  // Send that as props to home form
   const dispatch = useDispatch();
   const p = useTranslate();
   const home = useSelector((state) => state.home?.homepage);
+  
   return (
     <StyledSectionAbout>
       <div className="about-content">

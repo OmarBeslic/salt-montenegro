@@ -3,31 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import useTranslate from "../../../../../../Hooks/useTranslate";
 
 import { StyledHomeForm } from "./StyledHomeForm";
-import PrimaryButton from "../../../../../Components/Shared/Buttons/primaryButton";
 import SelectField from "../../../../../../FormFields/Select";
 import DatePicker from "../../../../../../FormFields/Datepicker";
 import SecondaryButton from "../../../../../Components/Shared/Buttons/secondarybutton";
 import { useState } from "react";
 import { populateHomeForm } from "../../../../../store/slices/homeSlice";
+import { useNavigate } from "react-router-dom";
 
 function HomeForm() {
   const p = useTranslate();
   const home = useSelector((state) => state.home?.homepage);
-  const dispatch = useDispatch();
-  const [value, setValue] = useState("");
-  const countries = useSelector((state) => state?.layout?.countries);
-  const handleChange = (e,name) => {
-    const option = countries?.find((el) => el?.value?.includes(e?.target?.value));
-    setValue(e?.target?.value);
-    dispatch(
-      populateHomeForm({ name:name, value: option?.value, label: option?.label })
-    );
-  };
+  const navigate = useNavigate();
+
   return (
     <StyledHomeForm>
       <div className="container">
-        <h1>{p(home?.homeFormTitle)}</h1>
-        <div className="home-form">
+        <h2>{p(home?.homeFormTitle)}</h2>
+        {/* <div className="home-form">
           <form action="">
             <SelectField
               name="tourChoose"
@@ -44,9 +36,11 @@ function HomeForm() {
             />
             <DatePicker name="dateChoose" label="Choose date" />
           </form>
-        </div>
+        </div> */}
       </div>
-      <SecondaryButton>Search tour</SecondaryButton>
+      <SecondaryButton onClick={() => navigate("/tours")}>
+        Search tour
+      </SecondaryButton>
     </StyledHomeForm>
   );
 }
