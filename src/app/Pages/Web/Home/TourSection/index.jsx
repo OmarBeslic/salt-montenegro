@@ -9,14 +9,14 @@ import useTranslate from "../../../../../Hooks/useTranslate";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 //
 import Tour from "./Tour";
-import boat from "../../../../../Assets/images/boat2.webp";
 import { StyledTourSection } from "./StyledTourSection";
+import { useTranslation } from "react-i18next";
 
 function TourSection() {
   const navigate = useNavigate();
   const p = useTranslate();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
-  // fetch tura pa ih slicovati i mapirati da prikazuje samo tri
   const notDesktop = useSelector((state) => state.layout?.device) !== "desktop";
   const home = useSelector((state) => state.home?.homepage);
   const tours = useSelector((state) => state.tours?.tours)?.slice(0, 4);
@@ -47,10 +47,9 @@ function TourSection() {
           onClick={() => navigate("/tours")}
           className="tours-btn"
         >
-          View all Tours
+          {t("home.viewAll")}
         </SecondaryButton>
       </div>
-      <img src={boat} alt="Boat" className="boat-sm" />
     </StyledTourSection>
   );
 }

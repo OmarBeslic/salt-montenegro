@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledReview } from "./StyledReview";
-import user from "../../../../../../Assets/images/user.webp";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import StarRating from "./starRating";
 function Review({ review }) {
@@ -11,7 +10,7 @@ function Review({ review }) {
           <div className="person">
             <h3 className="name">{`${review?.name} ${review?.lastName}`}</h3>
             <div className="country">
-              <img src={review?.countryFlag} alt="Montenegro" />
+              <img src={review?.countryFlag} alt="Country" title="Country" />
               <span>{review?.country}</span>
             </div>
           </div>

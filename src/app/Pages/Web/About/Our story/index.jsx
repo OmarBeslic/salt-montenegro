@@ -10,8 +10,8 @@ import useTranslate from "../../../../../Hooks/useTranslate";
 function OutStory() {
   const dispatch = useDispatch();
   const p = useTranslate();
-  const about = useSelector((state) => state.home?.aboutUs);
   const crew = useSelector((state) => state.home?.crew);
+  const about = useSelector((state) => state.home?.aboutUs);
 
   useEffect(() => {
     dispatch(getAboutUs());
@@ -29,18 +29,20 @@ function OutStory() {
         <div className="pictures-div">
           <img
             src={about?.smallerPhoto}
-            alt=""
+            alt="Small photo"
+            title="Small Photo"
             className="smaller"
             onClick={() =>
-              dispatch(openModal({ name: "image", isOpen: true, data: photo }))
+              dispatch(openModal({ name: "image", isOpen: true, data: about?.smallerPhoto }))
             }
           />
           <img
             src={about?.biggerPhoto}
-            alt=""
+            alt="Big photo"
+            title="Big photo"
             className="bigger"
             onClick={() =>
-              dispatch(openModal({ name: "image", isOpen: true, data: photo }))
+              dispatch(openModal({ name: "image", isOpen: true, data: about?.biggerPhoto }))
             }
           />
         </div>

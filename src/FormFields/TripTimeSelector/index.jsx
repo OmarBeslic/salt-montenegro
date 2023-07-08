@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { StyledTimeSelector } from "./StyledTimeSelect";
+import { useTranslation } from "react-i18next";
 
 const TripTimeSelector = ({handleChange}) => {
   const [selectedTime, setSelectedTime] = useState(null);
-
+  const {t}=useTranslation()
   const handleTimeSelect = (time) => {
     setSelectedTime(time);
     handleChange(time)
@@ -32,7 +33,7 @@ const TripTimeSelector = ({handleChange}) => {
 
   return (
     <StyledTimeSelector >
-      <p>Choose the perfect time for your trip:</p>
+      <p>{t("form.chooseTime")}:</p>
       <div className="time-options-container">{renderTimeOptions()}</div>
     </StyledTimeSelector>
   );

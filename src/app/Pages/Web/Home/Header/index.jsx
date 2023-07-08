@@ -1,8 +1,6 @@
 import React from "react";
-
-// import home from "../../../../../Assets/images/homebg.webp";
-
 import { useSelector } from "react-redux";
+//
 import { StyledHeader } from "./StyledHome";
 import Waves from "../../../../../Assets/Animations/Waves";
 import HomeForm from "../SectionAbout/HomeForm";

@@ -13,10 +13,12 @@ import SelectField from "../../../../../FormFields/Select";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 import StarRating from "../../../../Components/Shared/StarRating";
 import PrimaryButton from "../../../../Components/Shared/Buttons/primaryButton";
+import { useTranslation } from "react-i18next";
 
 function WriteReview() {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state?.layout?.countries);
+  const { t } = useTranslation();
 
   const [review, setReview] = useState({
     name: "",
@@ -76,11 +78,11 @@ function WriteReview() {
     <div className="review-form">
       <ToastContainer />
       <div className="rating">
-        <p>Rating</p>
+        <p>{t("form.rating")}</p>
         <StarRating getStars={(e) => getStars(e)} />
       </div>
       <InputField
-        label="Name*"
+        label={t("form.name")}
         value={review?.name}
         onChange={(e) =>
           setReview({
@@ -91,7 +93,7 @@ function WriteReview() {
       />
       <InputField
         value={review?.lastName}
-        label="Last name*"
+        label={t("form.last")}
         onChange={(e) =>
           setReview({
             ...review,
@@ -101,7 +103,7 @@ function WriteReview() {
       />
       <InputField
         value={review?.userEmail}
-        label="Email*"
+        label={t("form.email")}
         onChange={(e) =>
           setReview({
             ...review,
@@ -113,7 +115,7 @@ function WriteReview() {
       <SelectField
         value={review?.country}
         name="country"
-        label="Your country*"
+        label={t("form.country")}
         options={countries}
         onChange={(e) =>
           setReview({
@@ -128,7 +130,7 @@ function WriteReview() {
 
       <InputField
         value={review?.review}
-        label="Review*"
+        label={t("form.review")}
         multiline
         rows={4}
         onChange={(e) =>
@@ -139,7 +141,7 @@ function WriteReview() {
         }
       />
       <PrimaryButton onClick={() => handleSendReview()}>
-        Send review
+        {t("form.sendReview")}{" "}
       </PrimaryButton>
     </div>
   );

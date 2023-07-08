@@ -37,6 +37,7 @@ function TourSlider({ images }) {
             <img
               src={el}
               alt="Slider images"
+              title="Slide"
               onClick={() =>
                 dispatch(
                   openModal({

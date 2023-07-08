@@ -11,10 +11,12 @@ import PrimaryButton from "../../../../Components/Shared/Buttons/primaryButton";
 import { useRef } from "react";
 import BookingForm from "../BookingForm/bookForm";
 import { scrollToDiv } from "../../../../../FormFields/helpers";
+import { useTranslation } from "react-i18next";
 
 function SingleTour() {
   const { id } = useParams();
   const p = useTranslate();
+  const {t} = useTranslation()
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const bookDiv = useRef(null);
@@ -48,20 +50,20 @@ function SingleTour() {
             <p>{p(singleTour?.shortDesc)}</p>
           </div>
           <div className="tour-info">
-            <h2>Tour Info</h2>
+            <h2>{t("tour.tourInfo")}</h2>
             <div className="infos">
               <div className="info">
-                Duration: <h4>{singleTour?.tourDuration}h</h4>
+              {t("tour.tourDuration")}: <h4>{singleTour?.tourDuration}h</h4>
               </div>
               <div className="info">
-                Price: <h4>{singleTour?.price}€</h4>
+              {t("tour.tourPrice")}: <h4>{singleTour?.price}€</h4>
               </div>
               <div className="info">
-                Max: <h4>{singleTour?.tourDuration} people</h4>
+              {t("tour.tourMax")}: <h4>{singleTour?.tourDuration} {t("tour.tourPeople")}</h4>
               </div>
             </div>
             <PrimaryButton onClick={() => scrollToDiv(bookDiv)}>
-              Proceed to booking
+            {t("tour.tourProceed")}
             </PrimaryButton>
           </div>
         </div>

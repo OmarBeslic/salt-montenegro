@@ -21,41 +21,7 @@ export const StyledHomeForm = styled.div`
     h2 {
       color: var(--textMain);
     }
-    .home-form {
-      border-left: 1px solid var(--primary);
-      padding: 20px 15px;
-      width: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      form {
-        width: 100%;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 20px;
-        select,
-        input {
-          margin: 10px 0;
-          border: unset;
-          width: 70%;
-          height: 48px;
-          &:hover,
-          &:active,
-          &:focus,
-          &:focus-visible,
-          &:visited {
-            border: unset;
-            outline: unset;
-          }
-        }
-        button {
-          margin-top: 10px;
-        }
-      }
-    }
+   
   }
   @media (max-width: 1024px) {
     margin: 0;
@@ -69,12 +35,7 @@ export const StyledHomeForm = styled.div`
         width: 95%;
         line-height: 1.125;
       }
-      .home-form {
-        width: 95%;
-        padding: 10px;
-        margin: 20px 0;
-        border: unset;
-      }
+      
     }
   }
   @media (max-width: 576px) {
@@ -88,12 +49,7 @@ export const StyledHomeForm = styled.div`
         width: 95%;
         line-height: 1.125;
       }
-      .home-form {
-        width: 95%;
-        padding: 10px;
-        margin: 20px 0;
-        border: unset;
-      }
+      
     }
   }
 `;

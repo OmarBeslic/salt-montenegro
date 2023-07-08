@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import sunset from "../.././../../../Assets/images/sunset.webp";
 export const StyledTeamSection = styled.div`
   width: 85%;
   display: flex;

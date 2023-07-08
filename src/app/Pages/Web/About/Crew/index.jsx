@@ -1,7 +1,5 @@
 import React from "react";
-import crew from "../../../../../Assets/images/crew.webp";
 import styled from "styled-components";
-import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -148,7 +146,7 @@ function Sailor({ sailor }) {
   return (
     <StyledSailor>
       <div className="img-backg">
-        <img src={sailor?.sailorPhoto} alt="Sailor" />
+        <img src={sailor?.sailorPhoto} alt="Sailor" title="Sailor"/>
       </div>
       <div className="about-sailor">
         <div className="name-more">

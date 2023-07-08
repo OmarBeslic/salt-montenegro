@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledGallery } from "./StyledGallery";
-import seawatch from "../../../../../Assets/images/seawatch.webp"
 function Gallery() {
   return (
     <StyledGallery>

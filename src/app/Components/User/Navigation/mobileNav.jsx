@@ -3,13 +3,13 @@ import { StyledMobileNav } from "./StyledNavigation";
 import logo from "../../../../Assets/images/logo2.png";
 import Dropdown from "./Dropdown";
 import { Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LangBtn from "../Languages";
 
 function MobileNav({ scrolled }) {
   const { t } = useTranslation();
-
+  const navigate = useNavigate()
   const [navOpened, setNavOpened] = useState(false);
   const links = [
     { route: "/home", item: t("nav.home") },
@@ -25,7 +25,7 @@ function MobileNav({ scrolled }) {
     <StyledMobileNav>
       <div className="main-nav">
         <div className="nav">
-          <img src={logo} alt="" className="logo-mobile" />
+          <img src={logo} alt="logo" title="Logo" onClick={() => navigate("/home")} className="logo-mobile" />
           <div className="lang-nav">
             <LangBtn scrolled={scrolled} />
             <div

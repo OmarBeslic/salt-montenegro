@@ -10,6 +10,7 @@ import {
 import { StyledSingleBlog } from "./StyledSingleBlog";
 import useTranslate from "../../../../../Hooks/useTranslate";
 import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutton";
+import { openModal } from "../../../../store/slices/layoutSlice";
 
 function SingleBlog() {
   const { id } = useParams();
@@ -31,7 +32,20 @@ function SingleBlog() {
       <div className="blog-container">
         <div className="blog-value">
           <h2>{p(singleBlog?.blogTitleSlug)}</h2>
-          <img src={singleBlog?.mainPicture} alt="" />
+          <img
+            src={singleBlog?.mainPicture}
+            alt="Main"
+            title="Main"
+            onClick={() =>
+              dispatch(
+                openModal({
+                  name: "image",
+                  isOpen: true,
+                  data: singleBlog?.mainPicture,
+                })
+              )
+            }
+          />
           <div className="author-date">
             <span>{singleBlog?.author}</span>
             <span>{singleBlog?.published}</span>
@@ -39,11 +53,37 @@ function SingleBlog() {
           <p>{p(singleBlog?.blogContent)}</p>
         </div>
         <div className="blog-paired left">
-          <img src={singleBlog?.blogPicOne} alt="" />
+          <img
+            src={singleBlog?.blogPicOne}
+            alt="Picone"
+            title="Picone"
+            onClick={() =>
+              dispatch(
+                openModal({
+                  name: "image",
+                  isOpen: true,
+                  data: singleBlog?.blogPicOne,
+                })
+              )
+            }
+          />
           <p>{p(singleBlog?.blogContentTwo)}</p>
         </div>
         <div className="blog-paired right">
-          <img src={singleBlog?.blogPicTwo} alt="" />
+          <img
+            src={singleBlog?.blogPicTwo}
+            alt="Pic Two"
+            title="Pic Two"
+            onClick={() =>
+              dispatch(
+                openModal({
+                  name: "image",
+                  isOpen: true,
+                  data: singleBlog?.blogPicTwo,
+                })
+              )
+            }
+          />
           <p>{p(singleBlog?.blogContentThree)}</p>
         </div>
         <SecondaryButton onClick={() => navigate(-1)}>Go back</SecondaryButton>

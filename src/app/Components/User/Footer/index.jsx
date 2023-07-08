@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyledFooter } from "./StyledFooter.js";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -7,8 +7,14 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Gallery from "../../../Pages/Web/Home/Gallery/index.jsx";
+import useTranslate from "../../../../Hooks/useTranslate.js";
+import { useDispatch, useSelector } from "react-redux";
+import { getAboutUs } from "../../../store/slices/homeSlice.js";
 function Footer() {
   const { t } = useTranslation();
+  const p = useTranslate();
+  const dispatch = useDispatch();
+  const about = useSelector((state) => state.home?.aboutUs);
 
   const links = [
     { route: "/home", item: t("nav.home") },
@@ -18,17 +24,17 @@ function Footer() {
     { route: "/tours", item: t("nav.tours") },
     { route: "/gallery", item: t("nav.gallery") },
   ];
+  useEffect(() => {
+    dispatch(getAboutUs());
+  }, []);
   return (
     <StyledFooter>
       <div className="footer-up">
         <div className="footers">
           <div className="footer-el">
-            <img src={logo} alt="" className="logo" />
+            <img src={logo} alt="Logo" title="Logo" className="logo" />
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Explicabo itaque, ipsa suscipit fuga facere, facilis assumenda
-              magnam dignissimos doloribus dolorem praesentium architecto soluta
-              odit doloremque perspiciatis. Molestias sit dignissimos nesciunt?
+              <p>{p(about?.pageText)} </p>
             </p>
             <div className="socials">
               <Link to="https://wa.me/69627028" target="_blank">
@@ -46,7 +52,11 @@ function Footer() {
             <h3>Explore</h3>
             <div className="footer-links">
               {links.map((el) => {
-                return <Link key={el?.item} to={el?.route}>{el?.item}</Link>;
+                return (
+                  <Link key={el?.item} to={el?.route}>
+                    {el?.item}
+                  </Link>
+                );
               })}
             </div>
           </div>

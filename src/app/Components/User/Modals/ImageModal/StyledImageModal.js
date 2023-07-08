@@ -17,8 +17,11 @@ export const StyledImageModal = styled.div`
   .image-div {
     width: 60%;
     height: 70vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     img {
-      width: 100%;
+      /* width: 100%; */
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
@@ -45,6 +48,12 @@ export const StyledImageModal = styled.div`
         height: unset;
       }
     }
+    .image-div {
+    img {
+      width: 100%;
+      height: unset;
+    }
+  }
 
     svg {
       top: 20px;

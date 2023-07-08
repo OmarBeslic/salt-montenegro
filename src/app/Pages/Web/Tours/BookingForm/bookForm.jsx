@@ -17,10 +17,11 @@ import {
 import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { sendBooking } from "../../../../store/slices/homeSlice";
-import { CircularProgress } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 function BookingForm({ tour }) {
   const p = useTranslate();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   let tourName = p(tour?.tourName);
   const [message, setMessage] = useState(null);
@@ -56,11 +57,11 @@ function BookingForm({ tour }) {
         <>
           <ToastContainer />
           <div className="tour-info">
-            <h2>Booking form </h2>
+            <h2>{t("form.booking")} </h2>
             <p>Max passengers: {tour?.people} </p>
           </div>
           <InputField
-            label={"Name*"}
+            label={t("form.name")}
             name="name"
             onChange={(e) => {
               setBooking({
@@ -70,7 +71,7 @@ function BookingForm({ tour }) {
             }}
           />
           <InputField
-            label={"Email*"}
+            label={t("form.email")}
             name="email"
             onChange={(e) => {
               setBooking({
@@ -80,7 +81,7 @@ function BookingForm({ tour }) {
             }}
           />
           <InputField
-            label={"Phone number*"}
+            label={t("form.phone")}
             name="phoneNumber"
             onChange={(e) => {
               setBooking({
@@ -90,7 +91,7 @@ function BookingForm({ tour }) {
             }}
           />
           <DatePicker
-            label={"Choose date*"}
+            label={t("form.date")}
             name="date"
             cb={(e) => {
               setBooking({
@@ -109,7 +110,7 @@ function BookingForm({ tour }) {
             }}
           />
           <InputField
-            label={"Message (optional)"}
+            label={t("form.message")}
             multiline
             rows={4}
             name="message"
@@ -121,7 +122,7 @@ function BookingForm({ tour }) {
             }}
           />
           <PrimaryButton className="tour-btn" onClick={() => handleBookTour()}>
-            Book tour
+            {t("form.bookTour")}
           </PrimaryButton>
         </>
       ) : (

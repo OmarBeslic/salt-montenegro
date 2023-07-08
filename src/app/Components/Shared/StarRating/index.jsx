@@ -18,7 +18,7 @@ const StarRating = ({getStars}) => {
             fontSize: "24px",
             cursor: "pointer",
             color:
-              selectedStar !== null && index <= selectedStar ? "var(--primary)" : "gray",
+              selectedStar !== null && index <= selectedStar ? "gold" : "gray",
           }}
           onClick={() => handleStarClick(index)}
         >

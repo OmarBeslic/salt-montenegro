@@ -34,8 +34,8 @@ function ImageModal() {
           dispatch(openModal({ name: null, isOpen: false, data: null }))
         }
       />
-      <div ref={modalRef} className="image-div">
-        <img src={modal?.data} alt="" />
+      <div className="image-div">
+        <img src={modal?.data} alt="Modal pic" title="Modal pic" ref={modalRef} />
       </div>
     </StyledImageModal>
   );

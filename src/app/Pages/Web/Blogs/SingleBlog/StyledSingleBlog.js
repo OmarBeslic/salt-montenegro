@@ -92,7 +92,7 @@ export const StyledSingleBlog = styled.div`
   }
   @media (max-width: 1024px) {
     .blog-value {
-      width: 95%;
+      width: 95% !important;
     }
     .blog-paired {
       width: 95% !important;
@@ -102,6 +102,7 @@ export const StyledSingleBlog = styled.div`
     .blog-paired {
       flex-direction: column !important;
       img {
+        width: 100% !important;
         margin: 15px 0;
       }
     }

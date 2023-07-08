@@ -42,7 +42,7 @@ export const StyledTour = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: left;
-    padding:10px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
@@ -68,7 +68,13 @@ export const StyledTour = styled.div`
       width: 100%;
       margin-top: 20px;
       span {
+        display: flex;
         font-weight: 700;
+        align-items: center;
+        justify-content: center;
+        svg {
+          margin: 0 5px 0 0;
+        }
       }
     }
   }

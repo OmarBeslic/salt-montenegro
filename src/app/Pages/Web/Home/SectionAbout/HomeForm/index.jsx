@@ -9,9 +9,11 @@ import SecondaryButton from "../../../../../Components/Shared/Buttons/secondaryb
 import { useState } from "react";
 import { populateHomeForm } from "../../../../../store/slices/homeSlice";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function HomeForm() {
   const p = useTranslate();
+  const { t } = useTranslation();
   const home = useSelector((state) => state.home?.homepage);
   const navigate = useNavigate();
 
@@ -19,27 +21,9 @@ function HomeForm() {
     <StyledHomeForm>
       <div className="container">
         <h2>{p(home?.homeFormTitle)}</h2>
-        {/* <div className="home-form">
-          <form action="">
-            <SelectField
-              name="tourChoose"
-              label="Choose tour"
-              options={countries}
-              onChange = {(e)=>handleChange(e,"tourChoose")}
-            />{" "}
-            <SelectField
-              name="peopleCount"
-              label="Number of people"
-              options={countries}
-              onChange = {(e)=>handleChange(e,"peopleCount")}
-
-            />
-            <DatePicker name="dateChoose" label="Choose date" />
-          </form>
-        </div> */}
       </div>
       <SecondaryButton onClick={() => navigate("/tours")}>
-        Search tour
+        {t("home.tourFind")}
       </SecondaryButton>
     </StyledHomeForm>
   );

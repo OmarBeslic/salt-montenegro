@@ -20,22 +20,22 @@ function DesktopNav({ scrolled }) {
   return (
     <StyledDesktopNav scrolled={scrolled}>
       <div className="logo">
-        <img src={logo} alt="Logo" onClick={() => navigate("/home")} />
+        <img src={logo} alt="Logo" onClick={() => navigate("/home")} title="Logo"/>
       </div>
 
       <div className="links-wrapper">
         <div className="contact-info">
           <div className="hours">
             <span>
-              Find us on
+              {t("home.find")}
               <a href="https://www.tripadvisor.com/Attraction_Review-g608961-d26241397-Reviews-Private_Fishing_boat_tour-Bar_Bar_Municipality.html" target="_blank">
                 TripAdvisor
               </a>
             </span>
           </div>
           <div className="mail">
-            <span className="phone">+382 69 789 465</span>
-            <span>info@salt-montenegro.com</span>
+            <span className="phone">+382 67 204808</span>
+            <span>info@saltmontenegro.com</span>
           </div>
         </div>
         <div className="links">

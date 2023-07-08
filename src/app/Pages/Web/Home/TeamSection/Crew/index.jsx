@@ -1,7 +1,5 @@
 import React from "react";
-import crew from "../../../../../../Assets/images/crew.webp";
 import styled from "styled-components";
-import SecondaryButton from "../../../../../Components/Shared/Buttons/secondarybutton";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -101,7 +99,7 @@ function Sailor({ sailor }) {
           <h2>{sailor?.name}</h2>
         </div>
         <div className="img-backg">
-          <img src={sailor?.sailorPhoto} alt="Sailor" />
+          <img src={sailor?.sailorPhoto} alt="Sailor" title="Sailor" />
         </div>
         <div className="socials">
           <Link to={`https://wa.me/${sailor?.sailorWA}`} target="_blank">

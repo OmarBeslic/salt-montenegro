@@ -15,7 +15,7 @@ function Images({ src, ...otherProps }) {
           dispatch(openModal({ name: "image", isOpen: true, data: src }))
         }
       >
-        <img src={src} alt="" />
+        <img src={src} alt="Gallery img" title="Gallery img" />
       </StyledImages>
     </>
   );

@@ -17,13 +17,14 @@ function SectionAbout() {
   return (
     <StyledSectionAbout>
       <div className="about-content">
-        <img src={anchor} alt="Anchor" className="anchor" />
+        <img src={anchor} alt="Anchor" className="anchor" title="Anchor" />
         <div className="left-content">
           <div className="photos-div">
             <div className="photo-left">
               <img
                 src={fish}
                 alt="Tuna fish"
+                title="Tuna"
                 className="fish"
                 onClick={() =>
                   dispatch(
@@ -34,6 +35,7 @@ function SectionAbout() {
               <img
                 src={boat}
                 alt="Boat"
+                title="Boat"
                 onClick={() =>
                   dispatch(
                     openModal({ name: "image", isOpen: true, data: boat })
@@ -45,6 +47,7 @@ function SectionAbout() {
               <img
                 src={fishingRod}
                 alt="Fishing Rod"
+                title="Rod"
                 onClick={() =>
                   dispatch(
                     openModal({ name: "image", isOpen: true, data: fishingRod })
@@ -56,6 +59,7 @@ function SectionAbout() {
               <img
                 src={boat}
                 alt="Boat"
+                title="Boat"
                 onClick={() =>
                   dispatch(
                     openModal({ name: "image", isOpen: true, data: boat })
@@ -65,6 +69,7 @@ function SectionAbout() {
               <img
                 src={fish}
                 alt="Tuna fish"
+                title="fish"
                 className="fish"
                 onClick={() =>
                   dispatch(

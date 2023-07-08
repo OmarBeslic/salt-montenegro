@@ -37,8 +37,9 @@ export const StyledHeader = styled.div`
       align-items: center;
       justify-content: center !important;
       height: 84%;
-      width: 100%;
-      justify-content: start;
+      width: 100% !important;
+      margin-left: unset !important;
+
     }
     .bg-video {
       height: 80vh;

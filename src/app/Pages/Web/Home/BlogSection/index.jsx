@@ -11,11 +11,13 @@ import SecondaryButton from "../../../../Components/Shared/Buttons/secondarybutt
 import SendMesage from "./Blog/SendMessage";
 import { StyledBlogSection } from "./StyledBlogSection";
 import Blog from "./Blog";
+import { useTranslation } from "react-i18next";
 
 function BlogSection() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const p = useTranslate();
+  const { t } = useTranslation();
   const home = useSelector((state) => state.home?.homepage);
   const blogs = useSelector((state) => state.blogs?.blogs);
 
@@ -47,7 +49,7 @@ function BlogSection() {
             onClick={() => navigate("/blog")}
             className="all-blogs-btn"
           >
-            All Blogs
+            {t("home.viewAll")}
           </SecondaryButton>
         </div>
         <div className="right-content">
