@@ -13,7 +13,7 @@ function SectionAbout() {
   const dispatch = useDispatch();
   const p = useTranslate();
   const home = useSelector((state) => state.home?.homepage);
-  
+
   return (
     <StyledSectionAbout>
       <div className="about-content">
@@ -22,58 +22,78 @@ function SectionAbout() {
           <div className="photos-div">
             <div className="photo-left">
               <img
-                src={fish}
+                src={home?.homePicOne}
                 alt="Tuna fish"
                 title="Tuna"
                 className="fish"
                 onClick={() =>
                   dispatch(
-                    openModal({ name: "image", isOpen: true, data: fish })
+                    openModal({
+                      name: "image",
+                      isOpen: true,
+                      data: home?.homePicOne,
+                    })
                   )
                 }
               />
               <img
-                src={boat}
+                src={home?.homePicTwo}
                 alt="Boat"
                 title="Boat"
                 onClick={() =>
                   dispatch(
-                    openModal({ name: "image", isOpen: true, data: boat })
+                    openModal({
+                      name: "image",
+                      isOpen: true,
+                      data: home?.homePicTwo,
+                    })
                   )
                 }
               />
             </div>
             <div className="photo-right">
               <img
-                src={fishingRod}
+                src={home?.homePicThree}
                 alt="Fishing Rod"
                 title="Rod"
                 onClick={() =>
                   dispatch(
-                    openModal({ name: "image", isOpen: true, data: fishingRod })
+                    openModal({
+                      name: "image",
+                      isOpen: true,
+                      data: home?.homePicThree,
+                    })
                   )
                 }
               />
             </div>
             <div className="photo-left">
               <img
-                src={boat}
+                src={home?.homePicFour}
                 alt="Boat"
                 title="Boat"
                 onClick={() =>
                   dispatch(
-                    openModal({ name: "image", isOpen: true, data: boat })
+                    openModal({
+                      name: "image",
+                      isOpen: true,
+                      data: home?.homePicFour,
+                    })
                   )
                 }
               />
               <img
-                src={fish}
+                src={home?.homePicFive}
                 alt="Tuna fish"
                 title="fish"
                 className="fish"
                 onClick={() =>
                   dispatch(
-                    openModal({ name: "image", isOpen: true, data: fish })
+                    openModal({
+                      name: "image",
+                      isOpen: true,
+                      data: home?.homePicFive,
+                    })
                   )
                 }
               />

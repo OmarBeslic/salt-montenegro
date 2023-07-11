@@ -8,7 +8,11 @@ import WriteReview from "./WriteReview";
 function Testimonials() {
   const { t } = useTranslation();
   return (
-    <Page title={t("nav.testimonials")} meta="Recenzije">
+    <Page
+      title={t("nav.testimonials")}
+      meta="Discover the heartfelt experiences shared by our satisfied customers at Salt Montenegro. Read testimonials and reviews about our exceptional fishing tours, panoramic adventures, taxi boat services, picnic tours, and romantic excursions. Gain insights into the unforgettable moments and cherished memories created by our dedicated team. Join us and be a part of the Salt Montenegro success story"
+      keywords="customer testimonials, reviews, fishing tours, panorama tours, taxi boat services, picnic tours, romantic excursions, Salt Montenegro, customer satisfaction, memorable experiences, cherished memories"
+    >
       <StyledTestimonial>
         <div className="review">
           <div className="left-review">
@@ -22,7 +26,7 @@ function Testimonials() {
             </h2>
           </div>
           <div className="right-review">
-            <WriteReview/>
+            <WriteReview />
           </div>
         </div>
       </StyledTestimonial>

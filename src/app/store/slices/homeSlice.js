@@ -76,6 +76,11 @@ export const homeSlice = createSlice({
           homepage: {
             ...action.payload,
             homeHeaderBackground: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homeHeaderBackground?.data?.attributes?.url}`,
+            homePicOne: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homePicOne?.data?.attributes?.url}`,
+            homePicTwo: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homePicTwo?.data?.attributes?.url}`,
+            homePicThree: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homePicThree?.data?.attributes?.url}`,
+            homePicFour: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homePicFour?.data?.[0]?.attributes?.url}`,
+            homePicFive: `https://salt-mne-be-s8vht.ondigitalocean.app${action.payload?.homePicFive?.data?.[0]?.attributes?.url}`,
           },
           loading: false,
         };

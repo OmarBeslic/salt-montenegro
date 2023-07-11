@@ -18,16 +18,44 @@ import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { sendBooking } from "../../../../store/slices/homeSlice";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
 
 function BookingForm({ tour }) {
   const p = useTranslate();
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  let tourName = p(tour?.tourName);
+  const tName = p(tour?.tourName);
   const [message, setMessage] = useState(null);
-  const [booking, setBooking] = useState({
-    tourName: tourName,
-  });
+  const [booking, setBooking] = useState({});
+
+  const templateParams = {
+    message: "Imas novi booking!",
+    name: booking.name,
+    tourName: tName,
+    email: booking?.email,
+    phone: booking?.phoneNumber,
+    date: booking?.date,
+    time: booking?.timeSelect,
+  };
+
+  const bookingAlert = () => {
+    // Ubaciti eminine parametre tu
+    emailjs
+      .send(
+        "service_081h4xl",
+        "template_rgxtsoj",
+        templateParams,
+        "QDRaPlWHJ1PijgrlB"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const handleBookTour = () => {
     if (
@@ -44,7 +72,8 @@ function BookingForm({ tour }) {
       return showToast("error", "Email is not in valid format");
     }
 
-    dispatch(sendBooking(booking)).then((res) => {
+    dispatch(sendBooking({ ...booking, tourName: tName })).then((res) => {
+      bookingAlert();
       setMessage(
         "Booking successfully sent! We will contact you soon. Salt montenegro team! "
       );

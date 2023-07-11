@@ -1,11 +1,12 @@
 import React from "react";
-import { StyledDesktopNav } from "./StyledNavigation";
-import logo from "../../../../Assets/images/logo2.png";
-import Dropdown from "./Dropdown";
 import { Link, useNavigate } from "react-router-dom";
-import LangBtn from "../Languages";
+//
 import { useTranslation } from "react-i18next";
+//
+import logo from "../../../../Assets/images/logo2.png";
 import { Typography } from "@mui/material";
+import { StyledDesktopNav } from "./StyledNavigation";
+import LangBtn from "../Languages";
 
 function DesktopNav({ scrolled }) {
   const { t } = useTranslation();
@@ -20,7 +21,12 @@ function DesktopNav({ scrolled }) {
   return (
     <StyledDesktopNav scrolled={scrolled}>
       <div className="logo">
-        <img src={logo} alt="Logo" onClick={() => navigate("/home")} title="Logo"/>
+        <img
+          src={logo}
+          alt="Logo"
+          onClick={() => navigate("/home")}
+          title="Logo"
+        />
       </div>
 
       <div className="links-wrapper">
@@ -28,7 +34,10 @@ function DesktopNav({ scrolled }) {
           <div className="hours">
             <span>
               {t("home.find")}
-              <a href="https://www.tripadvisor.com/Attraction_Review-g608961-d26241397-Reviews-Private_Fishing_boat_tour-Bar_Bar_Municipality.html" target="_blank">
+              <a
+                href="https://www.tripadvisor.com/Attraction_Review-g608961-d26241397-Reviews-Private_Fishing_boat_tour-Bar_Bar_Municipality.html"
+                target="_blank"
+              >
                 TripAdvisor
               </a>
             </span>

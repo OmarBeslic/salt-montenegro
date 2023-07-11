@@ -5,7 +5,10 @@ import Page from "../../../Components/User/Page";
 import Images from "./Images";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { cleanUpGallery, getAllPhotos } from "../../../store/slices/gallerySlice";
+import {
+  cleanUpGallery,
+  getAllPhotos,
+} from "../../../store/slices/gallerySlice";
 import { useState } from "react";
 import { useRef } from "react";
 import { getClassName } from "../../../../FormFields/helpers";
@@ -23,9 +26,9 @@ function Gallery() {
 
   useEffect(() => {
     dispatch(getAllPhotos());
-    return()=>{
-      dispatch(cleanUpGallery("photos"))
-    }
+    return () => {
+      dispatch(cleanUpGallery("photos"));
+    };
   }, []);
 
   useEffect(() => {
@@ -50,7 +53,11 @@ function Gallery() {
   }, [pageNum]);
 
   return (
-    <Page title={t("nav.gallery")} meta="Galerija">
+    <Page
+      title={t("nav.gallery")}
+      meta="Immerse yourself in the captivating visuals of Montenegro's scenic wonders at Salt Montenegro's gallery. Browse through stunning photographs and breathtaking images showcasing the beauty of our fishing tours, panoramic adventures, taxi boat services, picnic tours, and romantic excursions. Get inspired, envision your next adventure, and let the visuals transport you to the remarkable world of Salt Montenegro"
+      keywords="gallery, photographs, images, scenic wonders, fishing tours, panorama tours, taxi boat services, picnic tours, romantic excursions, Salt Montenegro, visual inspiration, adventure, beauty of Montenegro, montenegro fishing,montenegro tours"
+    >
       <StyledGallery>
         <div className="gallery-header">
           <span>Gallery</span>

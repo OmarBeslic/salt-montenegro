@@ -10,11 +10,12 @@ import { useTranslation } from "react-i18next";
 function SendMesage() {
   const ref = useRef();
   const { t } = useTranslation();
+
   const sendEmail = async (e) => {
     e.preventDefault();
     const form = ref.current;
     const formData = new FormData(form);
-
+    
     for (let [name, value] of formData.entries()) {
       if (!value) {
         showToast("error", "Please fill in all the required fields.");
@@ -23,6 +24,7 @@ function SendMesage() {
     }
 
     try {
+      // Ubaciti eminine parametre tu
       const result = await emailjs.sendForm(
         "service_nilgc85",
         "template_ka3utjq",

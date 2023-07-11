@@ -21,7 +21,7 @@ function Booking() {
     value: el?.tourName,
     label: p(el?.tourName),
   }));
-  console.log(slectTours, "slectTours");
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {

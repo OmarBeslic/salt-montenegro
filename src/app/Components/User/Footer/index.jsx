@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
-import { StyledFooter } from "./StyledFooter.js";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+//
+import { useDispatch, useSelector } from "react-redux";
+import { getAboutUs } from "../../../store/slices/homeSlice.js";
+//
+import { useTranslation } from "react-i18next";
+import useTranslate from "../../../../Hooks/useTranslate.js";
+//
+import { StyledFooter } from "./StyledFooter.js";
 import logo from "../../../../Assets/images/logo2.png";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Gallery from "../../../Pages/Web/Home/Gallery/index.jsx";
-import useTranslate from "../../../../Hooks/useTranslate.js";
-import { useDispatch, useSelector } from "react-redux";
-import { getAboutUs } from "../../../store/slices/homeSlice.js";
+
 function Footer() {
   const { t } = useTranslation();
   const p = useTranslate();

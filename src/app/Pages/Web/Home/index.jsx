@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //
 import { useTranslation } from "react-i18next";
@@ -21,13 +21,17 @@ function Homepage() {
 
   useEffect(() => {
     !home && dispatch(getHomepage());
-    return ()=>{
-      dispatch(cleanUpHome("homepage"))
-    }
+    return () => {
+      dispatch(cleanUpHome("homepage"));
+    };
   }, []);
 
   return (
-    <Page title={t("nav.home")} meta="Pocetna stranica">
+    <Page
+      title={t("nav.home")}
+      meta="Welcome to Salt Montenegro, your gateway to an extraordinary coastal experience. Immerse yourself in the stunning landscapes and crystal-clear waters of Montenegro with our fishing tours, panoramic adventures, taxi boat services, and romantic excursions. Let us guide you through a world of natural wonders and create unforgettable memories along the way. Plan your perfect getaway with Salt Montenegro today!"
+      keywords="coastal experience, fishing tours, panorama tours, taxi boat services, romantic excursions, Montenegro tourism, Salt Montenegro, natural wonders, coastal landscapes, memorable adventures, crystal-clear waters."
+    >
       <Header />
       <SectionAbout />
       <TourSection />

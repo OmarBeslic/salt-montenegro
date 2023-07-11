@@ -23,7 +23,11 @@ function Blogs() {
   }, []);
 
   return (
-    <Page title={t("nav.blog")} meta="Galerija">
+    <Page
+      title={t("nav.blog")}
+      meta="Explore a treasure trove of captivating blogs at Salt Montenegro. Dive into a world of travel stories, fishing tips, scenic wonders, and adventure inspiration. Discover valuable insights and expert advice to enhance your next coastal getaway in Montenegro. Immerse yourself in our blog collection and embark on a journey of discovery."
+      keywords=" travel blogs, fishing tips, scenic wonders, adventure inspiration, coastal getaway, Montenegro travel, Salt Montenegro blog, travel stories, expert advice, coastal exploration, destination insights."
+    >
       <StyledBlogs>
         <div className="blogs-header">
           <span>All blogs</span>
