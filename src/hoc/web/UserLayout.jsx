@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 //
@@ -10,15 +10,16 @@ import Modals from "../../app/Components/User/Modals";
 
 function UserLayout() {
   const dispatch = useDispatch();
-  const modal = useSelector(state => state.layout?.modal?.name)
+  const modal = useSelector((state) => state.layout?.modal?.name);
 
   useEffect(() => {
     dispatch(getAllTranslations());
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <Modals modal={modal}/>
+      <Modals modal={modal} />
       <Navigation />
       <Outlet />
       <Footer />

@@ -19,15 +19,27 @@ export const StyledGallery = styled.div`
     display: flex;
     gap: 10px;
     .photo {
-      border: 1px solid blue;
-      height: 100px;
-      width: 100px;
+      width: 110px;
+      border-radius: 10px;
+      cursor: pointer;
     }
   }
   @media (max-width: 1024px) {
     .photos {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      .photo{
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .photos {
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+      .photo{
+        width: 70%;
+      }
     }
   }
 `;
