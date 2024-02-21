@@ -25,7 +25,7 @@ function MobileNav({ scrolled }) {
     <StyledMobileNav>
       <div className="main-nav">
         <div className="nav">
-          <img src={logo} alt="logo" title="Logo" onClick={() => navigate("/home")} className="logo-mobile" />
+          <img loading="lazy" src={logo} alt="logo" title="Logo" onClick={() => navigate("/home")} className="logo-mobile" />
           <div className="lang-nav">
             <LangBtn scrolled={scrolled} />
             <div

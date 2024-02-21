@@ -16,7 +16,7 @@ function Gallery() {
       <div className="photos">
         {instaPosts?.slice(0, 4)?.map((el, idx) => {
           return (
-            <img
+            <img loading="lazy"
               src={el?.compressedMedia}
               className="photo"
               alt="Insta photo"

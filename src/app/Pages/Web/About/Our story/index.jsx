@@ -27,7 +27,7 @@ function OutStory() {
           <h2>{p(about?.pageTitle)}</h2>
         </div>
         <div className="pictures-div">
-          <img
+          <img loading="lazy"
             src={about?.smallerPhoto}
             alt="Small photo"
             title="Small Photo"
@@ -36,7 +36,7 @@ function OutStory() {
               dispatch(openModal({ name: "image", isOpen: true, data: about?.smallerPhoto }))
             }
           />
-          <img
+          <img loading="lazy"
             src={about?.biggerPhoto}
             alt="Big photo"
             title="Big photo"

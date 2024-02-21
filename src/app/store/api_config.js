@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const defaultOptions = {
-    baseURL: "https://salt-mne-be-s8vht.ondigitalocean.app/api",
+    baseURL: "http://localhost:1337/api",
     headers: {
         "Content-Type": "application/json",
         'Accept': 'application/json, text/plain, */*', 

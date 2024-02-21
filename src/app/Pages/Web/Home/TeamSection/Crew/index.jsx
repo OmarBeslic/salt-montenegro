@@ -99,7 +99,7 @@ function Sailor({ sailor }) {
           <h2>{sailor?.name}</h2>
         </div>
         <div className="img-backg">
-          <img src={sailor?.sailorPhoto} alt="Sailor" title="Sailor" />
+          <img loading="lazy" src={sailor?.sailorPhoto} alt="Sailor" title="Sailor" />
         </div>
         <div className="socials">
           <Link to={`https://wa.me/${sailor?.sailorWA}`} target="_blank">

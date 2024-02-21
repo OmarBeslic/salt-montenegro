@@ -21,7 +21,7 @@ function DesktopNav({ scrolled }) {
   return (
     <StyledDesktopNav scrolled={scrolled}>
       <div className="logo">
-        <img
+        <img loading="lazy"
           src={logo}
           alt="Logo"
           onClick={() => navigate("/home")}

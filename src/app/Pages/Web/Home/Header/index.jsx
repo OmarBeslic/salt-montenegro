@@ -10,7 +10,7 @@ function Header() {
   const home = useSelector((state) => state.home?.homepage);
   return (
     <StyledHeader isMobile={isMobile}>
-      <img src={home?.homeHeaderBackground} className="bg-video" />
+      <img loading="lazy" src={home?.homeHeaderBackground} className="bg-video" />
       {/* <video className="bg-video" autoPlay loop muted>
         <source src={test} type="video/mp4" />
       </video> */}

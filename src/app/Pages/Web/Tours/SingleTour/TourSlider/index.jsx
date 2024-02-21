@@ -34,7 +34,7 @@ function TourSlider({ images }) {
       {images?.map((el, idx) => {
         return (
           <SwiperSlide key={idx}>
-            <img
+            <img loading="lazy"
               src={el}
               alt="Slider images"
               title="Slide"

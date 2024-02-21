@@ -146,7 +146,7 @@ function Sailor({ sailor }) {
   return (
     <StyledSailor>
       <div className="img-backg">
-        <img src={sailor?.sailorPhoto} alt="Sailor" title="Sailor"/>
+        <img loading="lazy" src={sailor?.sailorPhoto} alt="Sailor" title="Sailor"/>
       </div>
       <div className="about-sailor">
         <div className="name-more">

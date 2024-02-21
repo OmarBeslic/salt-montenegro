@@ -10,7 +10,7 @@ function Review({ review }) {
           <div className="person">
             <h3 className="name">{`${review?.name} ${review?.lastName}`}</h3>
             <div className="country">
-              <img src={review?.countryFlag} alt="Country" title="Country" />
+              <img loading="lazy" src={review?.countryFlag} alt="Country" title="Country" />
               <span>{review?.country}</span>
             </div>
           </div>

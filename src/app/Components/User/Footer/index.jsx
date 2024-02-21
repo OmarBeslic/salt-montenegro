@@ -36,7 +36,7 @@ function Footer() {
       <div className="footer-up">
         <div className="footers">
           <div className="footer-el">
-            <img src={logo} alt="Logo" title="Logo" className="logo" />
+            <img loading="lazy" src={logo} alt="Logo" title="Logo" className="logo" />
             <p>
               <p>{p(about?.pageText)} </p>
             </p>

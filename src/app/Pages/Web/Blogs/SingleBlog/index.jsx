@@ -38,7 +38,7 @@ function SingleBlog() {
         <div className="blog-container">
           <div className="blog-value">
             <h2>{p(singleBlog?.blogTitleSlug)}</h2>
-            <img
+            <img loading="lazy"
               src={singleBlog?.mainPicture}
               alt="Main"
               title="Main"
@@ -59,7 +59,7 @@ function SingleBlog() {
             <p>{p(singleBlog?.blogContent)}</p>
           </div>
           <div className="blog-paired left">
-            <img
+            <img loading="lazy"
               src={singleBlog?.blogPicOne}
               alt="Picone"
               title="Picone"
@@ -76,7 +76,7 @@ function SingleBlog() {
             <p>{p(singleBlog?.blogContentTwo)}</p>
           </div>
           <div className="blog-paired right">
-            <img
+            <img loading="lazy"
               src={singleBlog?.blogPicTwo}
               alt="Pic Two"
               title="Pic Two"

@@ -13,7 +13,7 @@ function NotFound() {
         <h2>Something went wrong</h2>
         <p>Error 404 page not found</p>
       </div>
-      <img src={logo} alt="logo" title="Logo" />
+      <img loading="lazy" src={logo} alt="logo" title="Logo" />
           
       <SecondaryButton onClick={() => navigate("/home")}>Back to Home</SecondaryButton>
     </Styled404>

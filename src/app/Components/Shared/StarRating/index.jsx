@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const StarRating = ({getStars}) => {
+const StarRating = ({ getStars }) => {
   const [selectedStar, setSelectedStar] = useState(null);
 
   const handleStarClick = (index) => {
     setSelectedStar(index);
-    getStars(index)
+    getStars(index);
   };
-  
+
   return (
     <div>
       {Array.from({ length: 5 }, (_, index) => (
@@ -17,6 +17,9 @@ const StarRating = ({getStars}) => {
             display: "inline-block",
             fontSize: "24px",
             cursor: "pointer",
+            ":hover": {
+              color: "gold",
+            },
             color:
               selectedStar !== null && index <= selectedStar ? "gold" : "gray",
           }}

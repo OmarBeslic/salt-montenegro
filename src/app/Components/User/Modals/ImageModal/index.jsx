@@ -33,7 +33,7 @@ function ImageModal() {
         }
       />
       <div className="image-div">
-        <img src={modal?.data} alt="Modal pic" title="Modal pic" ref={modalRef} />
+        <img loading="lazy" src={modal?.data} alt="Modal pic" title="Modal pic" ref={modalRef} />
       </div>
     </StyledImageModal>
   );

@@ -1,8 +1,8 @@
 import instance from "../api_config";
 
-
 const getAllBlogs = () => {
-  return instance.get(`/blogs?populate=*`);
+  const postsBaseURL = `${API_BASE_URL}/posts`;
+  return instance.get(postsBaseURL);
 };
 
 const blogService = {

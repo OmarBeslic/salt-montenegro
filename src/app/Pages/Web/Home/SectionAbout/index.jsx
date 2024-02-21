@@ -17,11 +17,11 @@ function SectionAbout() {
   return (
     <StyledSectionAbout>
       <div className="about-content">
-        <img src={anchor} alt="Anchor" className="anchor" title="Anchor" />
+        <img loading="lazy" src={anchor} alt="Anchor" className="anchor" title="Anchor" />
         <div className="left-content">
           <div className="photos-div">
             <div className="photo-left">
-              <img
+              <img loading="lazy"
                 src={home?.homePicOne}
                 alt="Tuna fish"
                 title="Tuna"
@@ -36,7 +36,7 @@ function SectionAbout() {
                   )
                 }
               />
-              <img
+              <img loading="lazy"
                 src={home?.homePicTwo}
                 alt="Boat"
                 title="Boat"
@@ -52,7 +52,7 @@ function SectionAbout() {
               />
             </div>
             <div className="photo-right">
-              <img
+              <img loading="lazy"
                 src={home?.homePicThree}
                 alt="Fishing Rod"
                 title="Rod"
@@ -68,7 +68,7 @@ function SectionAbout() {
               />
             </div>
             <div className="photo-left">
-              <img
+              <img loading="lazy"
                 src={home?.homePicFour}
                 alt="Boat"
                 title="Boat"
@@ -82,7 +82,7 @@ function SectionAbout() {
                   )
                 }
               />
-              <img
+              <img loading="lazy"
                 src={home?.homePicFive}
                 alt="Tuna fish"
                 title="fish"

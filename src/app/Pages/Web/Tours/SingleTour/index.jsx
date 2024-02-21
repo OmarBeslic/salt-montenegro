@@ -37,7 +37,7 @@ function SingleTour() {
         <div className="tour-container">
           <div className="tour-header">
             <div className="main-image">
-              <img
+              <img loading="lazy"
                 src={singleTour?.coverPicture}
                 alt=""
                 onClick={() =>

@@ -42,7 +42,7 @@ export default function LangBtn({ scrolled }) {
       scrolled={scrolled}
       device={device}
     >
-      <img src={activeLang?.icon} alt={LANGS[0].label} title={LANGS[0].label}/>
+      <img loading="lazy" src={activeLang?.icon} alt={LANGS[0].label} title={LANGS[0].label}/>
       <ArrowDropDownIcon />
 
       <ul>
@@ -53,7 +53,7 @@ export default function LangBtn({ scrolled }) {
               key={`lang-${lang?.value}`}
               className={i18n.language === lang?.value ? "active" : ""}
             >
-              <img src={lang?.icon} alt="Icon" title="Icon" />
+              <img loading="lazy" src={lang?.icon} alt="Icon" title="Icon" />
               {t(lang?.label)}
             </li>
           );

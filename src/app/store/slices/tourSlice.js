@@ -18,9 +18,9 @@ export const getAllTours = createAsyncThunk("all/tours", async (id) => {
     price: el?.attributes?.tourPrice,
     people: el?.attributes?.peopleCount,
     tourDuration: el?.attributes?.tourDuration,
-    coverPicture: `https://salt-mne-be-s8vht.ondigitalocean.app${el?.attributes?.thumbnailCoverPic?.data?.attributes?.url}`,
+    coverPicture: `http://localhost:1337${el?.attributes?.thumbnailCoverPic?.data?.attributes?.url}`,
     images: el?.attributes?.tourPhotos?.data?.map(
-      (el) => `https://salt-mne-be-s8vht.ondigitalocean.app${el?.attributes?.url}`
+      (el) => `http://localhost:1337${el?.attributes?.url}`
     ),
   }));
   return formattedTours;
